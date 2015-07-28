@@ -7,8 +7,9 @@
 body {
 	margin: 0 auto;
 	padding: 0;
-	font-family: 'Istok Web', sans-serif;
-	font-size: 15px;
+	/*font-family: 'Istok Web', sans-serif;*/
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	color: #212121;
 	background: url(../images/bg.png);
 	background-repeat: no-repeat;
@@ -25,6 +26,22 @@ a:hover,  a:focus {
 	margin-top: 30px;
 	margin-bottom: 30px;
 	padding: 15px;
+}
+h1 {
+    font-family: "MyWebFont";
+    font-weight: normal;
+    text-align: left;
+}
+h1 {
+    border-bottom: 1px solid #6D6B6B;
+    color: #454545;
+    font-size: 24px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    position: relative;
+    text-shadow: 0 1px 0 white;
+    width: 90%;
 }
 .logo a {
 	color: #EDEDED;
@@ -171,7 +188,7 @@ a:hover,  a:focus {
 .details-mian {
 	background-color: #ffffff;
 	background-image: url(../images/wix-sidebar-bg.png);
-	background-position: left top;
+	background-position: right top;
 	background-repeat: repeat-y;
 }
 .right-sidebar {
@@ -241,8 +258,9 @@ a:hover,  a:focus {
 	text-decoration: none;
 }
 .post-box-link {
-	border-bottom: 1px solid rgb(205, 205, 205);
-	border-top: 1px solid rgb(205, 205, 205);
+	/*border-bottom: 1px solid rgb(205, 205, 205);
+	border-top: 1px solid rgb(205, 205, 205);*/
+
 	display: table;
 	padding: 9px 0 0;
 	width: 100%;
@@ -261,7 +279,7 @@ a:hover,  a:focus {
 	float: left;
 }
 .post-box-link li.date a,  .post-box-link li.admin a,  .post-box-link li.category a,  .post-box-link li.comments a {
-	color: #212121;
+	color:#5F5C5C;
 	padding: 0px 5px 0px 0px;
 }
 .post-box-link li.date a {
@@ -609,4 +627,69 @@ a:hover,  a:focus {
 }
 .wix-widget-author {
 	width:100%;
+}
+.topic{
+	color: #282828;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 19px;
+    font-weight: normal;
+    line-height: 22px;
+    padding: 7px 0 5px;
+    margin-bottom: 10px;
+    color: 
+}
+div.Meta {
+    z-index: 5;
+}
+div.Meta {
+    color: #70727c;
+    font-size: 11px;
+}
+div.Meta span.Announcement {
+    background: #a2cb2d none repeat scroll 0 0;
+    color: #fff;
+}
+.Meta span, .DataList .Meta strong {
+    margin-right: 12px;
+}
+.Meta .Announcement {
+    background: #777777 none repeat scroll 0 0;
+    border-radius: 2px;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 1px 4px;
+}
+.HasAnswersBox {
+    background: #013b76 none repeat scroll 0 0;
+}
+.AnswersBox {
+    background: #0053a9 none repeat scroll 0 0;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    margin-right: 4px;
+}
+.StatBox, .StatBox a {
+    color: #99e2fe;
+    display: block;
+}
+.StatBox {
+    background: #004c9b none repeat scroll 0 0;
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+    height: 38px;
+    line-height: 1.2;
+    padding: 5px 5px 0;
+    text-align: center;
+}
+.StatBox span {
+    display: block;
+    font-size: 9px;
+    font-weight: normal;
+    line-height: 1;
+    min-width: 38px;
+    padding-bottom: 2px;
+}
+.ViewsBox {
+    background: #0065ce none repeat scroll 0 0;
 }
