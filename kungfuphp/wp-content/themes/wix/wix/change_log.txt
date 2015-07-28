@@ -1,0 +1,74 @@
+Version 1.0
+     i) Intial Release
+
+Version: 1.0.1
+     i)  Added Bundled Masonry JS
+     ii) Removed FIXED height of LOGO
+     iii) Changed title tag in header.php file
+     iv)  Other small changes 	 
+	 
+Version: 1.0.2
+     i)  Set some conditions in FT options
+     ii) Changed Pagination to WordPress default pagination functions.
+     iii) Set Default comments form  
+     iv)  Changed search form in 404 page 
+
+Version: 1.0.3
+    i) Added comments section in page.php
+	
+Version: 1.0.4
+    i) Removed custom pagination and set default pagination	
+	
+Version: 1.0.5
+	i) set wp list comments  pingback and trackback 
+	ii) set div structure for all files 
+
+Version: 1.0.6
+	i) Optional custom pagination support added through plugin integration
+	
+Version: 1.0.7
+	i) set wix_comment pingback and trackback
+	ii) set comment for switched off 
+	
+Version: 1.1
+	ii) fixed comments.php	
+		
+Version: 1.2
+
+	i) set post thumbnail size.
+	ii) set languages file.
+	iii) Removed extra plugin code.
+	iv) Removed screen icon function.
+	v) Added images links in readme.txt file
+	vi) form field values set with escaped.
+	
+Version: 1.21
+    i) Added Image licenses
+	ii) Added esc_url in theme options inputs.
+
+Version: 1.22	
+	i) Changed esc_url() tpo esc_attr() for copyright text option.
+	
+Version: 1.23
+    i) Changed faster_theme_options to 	wix_theme_options.
+	
+Version: 1.24
+    i) Changed FT Option Logo.
+	ii) Remove space in Faster Themes
+	
+Version 1.25
+
+	i) Set TGM for pagination.
+	ii) Change copyright text condition.
+	iii) Change theme author uri in style.css.	
+	iv) Set css for Pagination.
+
+Version 1.26
+
+    i)  Set Sanitization in all input fields.
+	ii)	Define TGM license and link in  readme.txt
+	iii) Set copyright text in footer.
+	
+Version 1.27 (17th Nov 2014)
+    i) Fixed JS error which was appearing in admin panel.  
+ 	ii) Removed screen_icon() found in the file class-tgm-plugin-activation.php as it's deprecated.

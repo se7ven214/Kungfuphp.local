@@ -1,0 +1,12 @@
+/*
+ * Agents Stylesheet
+ */
+
+/* Generic Styles */
+.agents-clear {
+	clear: both;
+}
+
+.agents-widget .agent{
+	float: left;
+}
