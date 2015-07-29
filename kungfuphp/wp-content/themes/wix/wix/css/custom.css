@@ -769,4 +769,5 @@ input[type="search"] {
 	position: fixed;
  	z-index: 9999;
  	width:100%;
+ 	box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
 }
