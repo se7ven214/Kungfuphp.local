@@ -11,7 +11,7 @@ $i=1;
 	<div class="container">
     	<div class="row details-mian">
             
-            <article class="col-md-10 no-padding-left" >
+            <article class="col-md-9 no-padding-left" >
                 <h1>
                     Bài viết mới nhất
                     <span class="arrow"></span>

@@ -1,4 +1,4 @@
-<article class="col-md-2 no-padding-left">
+<article class="col-md-3 no-padding-left">
 	<div class="wix-sidebar">
 	<?php
 		dynamic_sidebar('sidebar-1');
