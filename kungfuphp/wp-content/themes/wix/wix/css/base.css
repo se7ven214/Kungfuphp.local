@@ -6,6 +6,7 @@
   position: relative;
 }
 .masonry-container{
-	width:96%;
+	width:95%;
 	margin-top:25px;
+	background: #fff;
 }

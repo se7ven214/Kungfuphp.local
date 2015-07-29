@@ -32,6 +32,38 @@
 <body <?php body_class(); ?>>
 <!-- Header Start  -->
 <header>
+	<article class="main-nav">
+        <?php
+			$wix_args = array(
+					'theme_location'  => 'primary',
+					'container'       => 'nav',
+					'container_class' => 'wix-menu navbar-collapse collapse',
+					'container_id'    => 'bs-example-navbar-collapse-1',
+					'menu_class'      => 'wix-menu navbar-collapse collapse',
+					'menu_id'         => '',
+					'echo'            => true,
+					'fallback_cb'     => 'wp_page_menu',
+					'before'          => '',
+					'after'           => '',
+					'link_before'     => '',
+					'link_after'      => '',
+					'items_wrap'      => '<ul>%3$s</ul>',
+					'depth'           => 0,
+					'walker'          => ''
+					);
+			wp_nav_menu($wix_args); ?>
+			<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+				<label>
+					<input type="search" 
+		                class="search-field" 
+		                placeholder="Tìm bài viết"  
+		                value="" name="s" 
+		                title="Tìm bài viết">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form>
+    </article>
+    
 	<section class="container">
     	<article class="row">
         	<?php if ( get_header_image() ) : ?>
@@ -59,40 +91,10 @@
 
         </article>
         <div class="clearfix"></div>
-        <article>
-        <?php
-			$wix_args = array(
-					'theme_location'  => 'primary',
-					'container'       => 'nav',
-					'container_class' => 'wix-menu navbar-collapse collapse',
-					'container_id'    => 'bs-example-navbar-collapse-1',
-					'menu_class'      => 'wix-menu navbar-collapse collapse',
-					'menu_id'         => '',
-					'echo'            => true,
-					'fallback_cb'     => 'wp_page_menu',
-					'before'          => '',
-					'after'           => '',
-					'link_before'     => '',
-					'link_after'      => '',
-					'items_wrap'      => '<ul>%3$s</ul>',
-					'depth'           => 0,
-					'walker'          => ''
-					);
-			wp_nav_menu($wix_args); ?>
-        </article>
-        <article style="background:#fff;margin-bottom:20px;">
+        <article class="slogan">
         	<img src="http://kungfuphp.com/wp-content/uploads/2015/01/avatar-kungfu-php.jpg" style="height:8%;width:8%;"/>
-        	<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-				<label>
-					<input type="search" 
-		                class="search-field" 
-		                placeholder="Tìm bài viết"  
-		                value="" name="s" 
-		                title="Tìm bài viết">
-				</label>
-				<input type="submit" class="search-submit" value="Search">
-			</form> 
-        	<span style="font-size:15px; font-weight:600;">"Bạn giàu có bao nhiêu phụ thuộc vào việc bạn cho đi bao nhiêu chứ không phải việc bạn sở hữu bao nhiêu tiền"</span>
+        	 
+        	<span style="font-size:15px; font-weight:600;"><marquee direction="right" width="90%">"Bạn giàu có bao nhiêu phụ thuộc vào việc bạn cho đi bao nhiêu chứ không phải việc bạn sở hữu bao nhiêu tiền"</marquee></span>
        		 
          </article>
     </section>

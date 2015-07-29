@@ -11,7 +11,7 @@ $i=1;
 	<div class="container">
     	<div class="row details-mian">
             
-            <article class="col-md-8 no-padding-left" >
+            <article class="col-md-10 no-padding-left" >
                 <h1>
                     Bài viết mới nhất
                     <span class="arrow"></span>
@@ -22,7 +22,7 @@ $i=1;
                             $style = ($i==5 || $i==6) ? "":"border-bottom: 1px solid #e6e6e6;";
                             $i++;
                         ?>            
-                    <div class="col-md-4 box" style="<?php echo $style; ?>height:300px;">
+                    <div class="col-md-4 box" style="<?php echo $style; ?>height:200px;">
                     	<div class="article">
                         	<?php $wix_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>
                         	<div class="post-box-img" style="width:150px;float:left">
@@ -117,7 +117,7 @@ $i=1;
                     </div>
             </article>
             <?php
-             //get_sidebar();
+             get_sidebar();
             ?>
 
         </div>

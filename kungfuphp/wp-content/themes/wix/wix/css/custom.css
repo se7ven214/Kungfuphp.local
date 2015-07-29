@@ -47,7 +47,7 @@ h1 {
     padding-left: 10px;
     position: relative;
     text-shadow: 0 1px 0 white;
-    width: 100%;
+    width: 95%;
 }
 .logo a {
 	color: #EDEDED;
@@ -58,8 +58,11 @@ h1 {
 	height: auto;
 }
 .wix-menu {
-	margin-top: 8px;
+	margin-top: 0px;
 	background: #BB2828;
+	position: fixed;
+ 	z-index: 9999;
+ 	width:100%;
 }
 .wix-menu > ul {
 	display: table;
@@ -122,6 +125,10 @@ h1 {
 }
 .wix-sidebar {
 	width: 100%;
+	margin-top:10%;
+}
+.wix-sidebar img{
+	padding-bottom:5%;
 }
 .wix-widget {
 	padding: 15px 20px 15px 25px;
@@ -195,7 +202,6 @@ h1 {
 }
 .details-mian {
 	background-color: #ffffff;
-	background-image: url(../images/wix-sidebar-bg.png);
 	background-position: right top;
 	background-repeat: repeat-y;
 }
@@ -703,6 +709,8 @@ div.Meta span.Announcement {
 }
 .search-form {
 	float:right;
+	margin-right:2%;
+	margin-top:0.5%;
 }
 
 .search-field {
@@ -725,7 +733,7 @@ div.Meta span.Announcement {
 .search-field:focus {
 	background-color: #f0f0f0;
 	background-image: url(http://30bpku37grim3y3dfz3q3khs.wpengine.netdna-cdn.com/wp-content/themes/_tk-1.1/images/mainNavSearchIcon.png);
-	border: 2px solid #8f8f8f;
+	/*border: 2px solid #8f8f8f;*/
 	cursor: text;
 	outline: 0;
 	width: 230px;
@@ -737,6 +745,7 @@ div.Meta span.Announcement {
 
 input[type="search"] {
   -webkit-appearance: textfield;
+  z-index: 9999;
 }
 
 .details-mian a:hover{
@@ -744,9 +753,20 @@ input[type="search"] {
 }
 
 .no-padding-left{
-	width:97%;
+	
 }
 
 .masonry-brick{
 	padding-bottom:20px;
+}
+
+.slogan{
+	background:#fff;
+	margin-bottom:20px;
+	margin-top:5%;
+}
+.main-nav{
+	position: fixed;
+ 	z-index: 9999;
+ 	width:100%;
 }
