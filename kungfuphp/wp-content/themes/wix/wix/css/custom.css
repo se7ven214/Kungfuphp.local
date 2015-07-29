@@ -37,18 +37,17 @@ h1 {
 }
 h1 {
     /*border-bottom: 1px solid #6D6B6B;*/
+    background: #DFDFDF;
     color: #454545;
-    font-size: 20px;
+    font-size: 17px;
     margin-left: 20px;
     margin-bottom: 10px;
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
     position: relative;
     text-shadow: 0 1px 0 white;
     width: 100%;
-    vertical-align:middle;
-}
-.no-padding-left{
-	background: #DFDFDF;
 }
 .logo a {
 	color: #EDEDED;
