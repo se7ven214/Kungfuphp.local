@@ -59,7 +59,7 @@
 
         </article>
         <div class="clearfix"></div>
-        <article class="col-md-12 wix-padding-none">
+        <article>
         <?php
 			$wix_args = array(
 					'theme_location'  => 'primary',
@@ -80,17 +80,21 @@
 					);
 			wp_nav_menu($wix_args); ?>
         </article>
-         <div align="center">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- ads header -->
-                <ins class="adsbygoogle"
-                     style="display:inline-block;width:728px;height:90px"
-                     data-ad-client="ca-pub-6007272368450164"
-                     data-ad-slot="2173074738"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
+        <article style="background:#fff;margin-bottom:20px;">
+        	<img src="http://kungfuphp.com/wp-content/uploads/2015/01/avatar-kungfu-php.jpg" style="height:8%;width:8%;"/>
+        	<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+				<label>
+					<input type="search" 
+			                class="search-field" 
+			                placeholder="Tìm bài viết"  
+			                value="" name="s" 
+			                title="Tìm bài viết">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form> 
+        	<span style="font-size:15px; font-weight:600;">"Bạn giàu có bao nhiêu phụ thuộc vào việc bạn cho đi bao nhiêu chứ không phải việc bạn sở hữu bao nhiêu tiền"</span>
+       		 
+         </article>
     </section>
 </header>
 <!-- Header End  -->
