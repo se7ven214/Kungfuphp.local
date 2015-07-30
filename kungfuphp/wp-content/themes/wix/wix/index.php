@@ -28,7 +28,7 @@ $i=1;
                         	<div class="post-box-img" style="width:150px;float:left">
 
                             	<?php if($wix_feat_image){ ?>
-                                <a href="<?php the_permalink(); ?>"><img width="300px" height="90px" src="<?php echo $wix_feat_image; ?>" alt="banner" /></a>
+                                <a href="<?php the_permalink(); ?>"><img src="<?php echo $wix_feat_image; ?>" alt="banner" /></a>
 								<?php } else { ?>
                                 <a href="<?php the_permalink(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png" alt="banner" /></a>
                                 <?php } ?>
