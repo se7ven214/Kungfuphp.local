@@ -22,7 +22,7 @@ $i=1;
                             $style = ($i==5 || $i==6) ? "":"border-bottom: 1px solid #e6e6e6;";
                             $i++;
                         ?>            
-                    <div class="col-md-4 box" style="<?php echo $style; ?>height:200px;">
+                    <div class="col-md-4 box" style="<?php echo $style; ?>">
                     	<div class="article">
                         	<?php $wix_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>
                         	<div class="post-box-img" style="width:150px;float:left">
@@ -43,7 +43,7 @@ $i=1;
                            
                             <div class="post-box-details" style="margin-left:10px;width:210px;float:left">
                             <a href="<?php the_permalink(); ?>"><?php  the_title(); ?></a>
-                               <?php  //the_excerpt(); ?>
+                               <?php  the_excerpt(); ?>
                             </div>
                              <div class="post-box-link" style="width:300px;float:left">
                         		<ul>

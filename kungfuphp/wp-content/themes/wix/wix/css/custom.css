@@ -761,9 +761,7 @@ input[type="search"] {
 }
 
 .slogan{
-	background:#fff;
-	margin-bottom:20px;
-	margin-top:5%;
+	background:transparent;
 }
 .main-nav{
 	position: fixed;
@@ -771,3 +769,10 @@ input[type="search"] {
  	width:100%;
  	box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
 }
+.adsbygoogle-sidebar{
+	padding-bottom:100px;
+ 	display:inline-block;
+ 	width:200px;
+ 	height:200px;
+ 	margin-bottom:10%;
+ }

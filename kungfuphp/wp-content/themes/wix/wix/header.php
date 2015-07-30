@@ -91,9 +91,19 @@
 
         </article>
         <div class="clearfix"></div>
+        <div align="center">
+        <img src="<?php echo home_url( '/' ); ?>wp-content/uploads/2015/01/avatar-kungfu-php.png" style="height:7%;width:7%;float:left;margin:4.5% 0 0 30px;"/>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- ads header -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px;margin-top:5%;"
+                     data-ad-client="ca-pub-6007272368450164"
+                     data-ad-slot="2173074738"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
         <article class="slogan">
-        	<img src="http://kungfuphp.com/wp-content/uploads/2015/01/avatar-kungfu-php.jpg" style="height:8%;width:8%;"/>
-        	 
         	<span style="font-size:15px; font-weight:600;"><marquee direction="right" width="90%">"Bạn giàu có bao nhiêu phụ thuộc vào việc bạn cho đi bao nhiêu chứ không phải việc bạn sở hữu bao nhiêu tiền"</marquee></span>
        		 
          </article>

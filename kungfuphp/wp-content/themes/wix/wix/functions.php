@@ -585,3 +585,8 @@ function insert_fb_in_head() {
     echo "";
 }
 add_action( 'wp_head', 'insert_fb_in_head', 5 );
+
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );

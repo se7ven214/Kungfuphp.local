@@ -14,7 +14,7 @@
 
 			}
 
-			 echo "Đối tác : <a href='http://shopnhoibong.com' rel='external nofollow' target='_blank' title='Shop Nhồi Bông'>Shop Nhồi Bông</a>&nbsp; .Copyright 09-11-2014 © by <a href='http://kungfuphp.com' title='học php online miễn phí'>Kungfu PHP</a> Version 1.0.";	
+			 echo "Đối tác : <a href='http://shopnhoibong.com' rel='external nofollow' target='_blank' title='Shop Nhồi Bông'>Shop Nhồi Bông</a>&nbsp; .Copyright 09-11-2014 © by <a href='http://kungfuphp.com' title='học php online miễn phí'>Kungfu PHP</a> Version 2.0.";	
 
 		?>
 
