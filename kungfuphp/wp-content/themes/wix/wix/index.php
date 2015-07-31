@@ -9,6 +9,7 @@ $i=1;
 <!-- Details Start  -->
 <section class="detail-section">
 	<div class="container">
+	<?php echo do_shortcode('[carousel-horizontal-posts-content-slider]'); ?>
     	<div class="row details-mian">
             
             <article class="col-md-9 no-padding-left" >
