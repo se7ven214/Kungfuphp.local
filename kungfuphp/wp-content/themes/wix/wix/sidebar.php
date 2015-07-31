@@ -1,6 +1,8 @@
 <article class="col-md-3 no-padding-left">
 	<div class="wix-sidebar">
 	<div align="center" class="wix-widget">
+	<h4>Chuyên Mục</h4>
+	<div class="menu-right-border"></div>
 	<ul>
 		<span><li><a href="<?php echo get_category_link(1); ?>">PHP Cơ Bản</a></li></span>
 		<li><a href="<?php echo get_category_link(2); ?>">PHP Nâng Cao</a></li>
