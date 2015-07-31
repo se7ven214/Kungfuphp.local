@@ -107,6 +107,7 @@
         	<span style="font-size:15px; font-weight:600;"><marquee direction="right" width="90%">"Bạn giàu có bao nhiêu phụ thuộc vào việc bạn cho đi bao nhiêu chứ không phải việc bạn sở hữu bao nhiêu tiền"</marquee></span>
        		 
          </article>
+          <?php echo do_shortcode('[carousel-horizontal-posts-content-slider]'); ?>
     </section>
 </header>
 <!-- Header End  -->
