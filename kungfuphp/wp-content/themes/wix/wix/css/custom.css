@@ -219,6 +219,7 @@ h1 {
 .detail-inner {
 	width: 100%;
 	margin-top: 40px;
+	border-left:2px solid #BB2828;
 }
 .post-box {
 	margin: 0 auto 0 0;
@@ -787,5 +788,6 @@ input[type="search"] {
 .chpcs_foo_content{
 	background:#fff;
 	border: 1px solid #CCC9C9;
+	border-top: 3px solid #BB2828;
 }
 #wa_chpc_slider_prev span:hover{color:#CCC9C9;}

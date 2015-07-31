@@ -82,7 +82,7 @@ $i=1;
                             $style = ($i==5 || $i==6) ? "":"border-bottom: 1px solid #e6e6e6;";
                             $i++;
                         ?>            
-                    <div class="topic">
+                    <div class="col-md-4 box topic">
                         <div class="article">                             
                            
                             <div style="<?php echo $style; ?>margin-left:10px;width:100%;float:left;margin-bottom:10px">
