@@ -4,11 +4,11 @@
 	<h4>Chuyên Mục</h4>
 	<div class="menu-right-border"></div>
 	<ul>
-		<span><li><a href="<?php echo get_category_link(1); ?>">PHP Cơ Bản</a></li></span>
-		<li><a href="<?php echo get_category_link(2); ?>">PHP Nâng Cao</a></li>
-		<li><a href="<?php echo get_category_link(54); ?>">Laravel 5</a></li>
-		<li><a href="<?php echo get_category_link(68); ?>">AngularJS</a></li>
-		<li><a href="<?php echo get_category_link(3); ?>">SEO</a></li>
+		<a href="<?php echo get_category_link(1); ?>"><li>PHP Cơ Bản</li></a>
+		<a href="<?php echo get_category_link(2); ?>"><li>PHP Nâng Cao</li></a>
+		<a href="<?php echo get_category_link(54); ?>"><li>Laravel 5</li></a>
+		<a href="<?php echo get_category_link(68); ?>"><li>AngularJS</li></a>
+		<a href="<?php echo get_category_link(3); ?>"><li>SEO</li></a>
 	</ul>
 	</div>
 	<img class="wix-widget" src="http://dantri4.vcmedia.vn/IpvqqPNo8LbbZCFrwHAnH3aJqFylB/Image/2015/06/anh-tin-26.05-3a29d.jpg"/>

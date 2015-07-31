@@ -144,12 +144,12 @@ h1 {
 	border-left:3px solid #1B966A;
 	padding: 10px;
 	margin-bottom:5px;
+	width:100%;
 }
 .wix-widget li:hover{
-	width:100%;
 	background: #f0f0f0;
 }
-.wix-widget li a:hover{
+.wix-widget ul a:hover{
 	color:#000;
 }
 .wix-widget li h4 a {
