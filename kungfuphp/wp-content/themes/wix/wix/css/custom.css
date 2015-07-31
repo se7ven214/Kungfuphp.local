@@ -141,6 +141,16 @@ h1 {
 .wix-widget li {
 	list-style: none;
 	display: table;
+	border-left:3px solid #1B966A;
+	padding: 10px;
+	margin-bottom:5px;
+}
+.wix-widget li:hover{
+	width:100%;
+	background: #f0f0f0;
+}
+.wix-widget li a:hover{
+	color:#000;
 }
 .wix-widget li h4 a {
 	color: #212121;
