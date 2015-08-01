@@ -3,13 +3,17 @@
 	<div align="center" class="wix-widget">
 	<h4>Chuyên Mục</h4>
 	<div class="menu-right-border"></div>
-	<ul>
-		<a href="<?php echo get_category_link(1); ?>"><li>PHP Cơ Bản</li></a>
-		<a href="<?php echo get_category_link(2); ?>"><li>PHP Nâng Cao</li></a>
-		<a href="<?php echo get_category_link(54); ?>"><li>Laravel 5</li></a>
-		<a href="<?php echo get_category_link(68); ?>"><li>AngularJS</li></a>
-		<a href="<?php echo get_category_link(3); ?>"><li>SEO</li></a>
-	</ul>
+	<?php
+		$chuyenmuc = "<ul>";
+		$categories = get_categories();
+		foreach ($categories as $cat) {
+			if ($cat->category_parent == 0) {
+				$chuyenmuc .= "<a href='".get_category_link($cat->cat_ID)."'><li>{$cat->cat_name}</li></a>";
+			}
+		}
+		$chuyenmuc .= "</ul>";
+		echo $chuyenmuc;
+	?>
 	</div>
 	<img class="wix-widget" src="http://dantri4.vcmedia.vn/IpvqqPNo8LbbZCFrwHAnH3aJqFylB/Image/2015/06/anh-tin-26.05-3a29d.jpg"/>
 	<img class="wix-widget" src="http://www.sapuwa.vn//uploads/images/news/2013/Tuyen%20dung/tuyen-dung-t52013-vi-tri-giam-sat-kinh-doanh-sales-sup-516201331753pm.jpg"/>
