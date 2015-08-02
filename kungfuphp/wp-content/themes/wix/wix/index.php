@@ -3,7 +3,7 @@
  * The main template file.
  */
 get_header();
-query_posts( 'posts_per_page=5' );
+query_posts( 'posts_per_page=6' );
 $i=1;
 ?>
 <!-- Details Start  -->
