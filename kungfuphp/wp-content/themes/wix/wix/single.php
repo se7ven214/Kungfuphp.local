@@ -13,7 +13,8 @@ get_header();
 			?>
             <article class="col-md-8">
             	<div class="wix-inner-post">
-                	<?php  if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
+                	<?php  if ( have_posts() ) :  while ( have_posts() ) : the_post(); wpb_set_post_views(get_the_ID());
+?>
                 	<aside id="post-<?php the_ID(); ?>" <?php post_class('col-md-12 no-padding-left wix-single-post')?>>
                     	<?php $wix_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
                         <?php if($wix_feat_image){ ?>
