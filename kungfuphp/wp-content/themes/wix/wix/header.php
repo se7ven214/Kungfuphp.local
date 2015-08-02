@@ -104,7 +104,7 @@
                 </script>
             </div>
         <article class="slogan">
-        	<span style="font-size:15px; font-weight:600;"><marquee direction="right" width="90%">"Bạn giàu có bao nhiêu phụ thuộc vào việc bạn cho đi bao nhiêu chứ không phải việc bạn sở hữu bao nhiêu tiền"</marquee></span>
+        	<span style="font-size:15px; font-weight:600;"><marquee direction="left" width="90%">"Bạn giàu có bao nhiêu phụ thuộc vào việc bạn cho đi bao nhiêu chứ không phải việc bạn sở hữu bao nhiêu tiền"</marquee></span>
        		 
          </article>
     </section>
