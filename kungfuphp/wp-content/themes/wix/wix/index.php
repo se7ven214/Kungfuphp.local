@@ -230,7 +230,6 @@ if(!empty($_POST['cus_cm'])){
 </section>
 <!-- Details End  -->
 <?php
- $_SESSION[$_SERVER['REMOTE_ADDR']] = 1;var_dump($_SESSION);
  get_footer();
 ?>
 <script type="text/javascript">
