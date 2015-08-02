@@ -26,7 +26,6 @@
 
     display: block;
     overflow: hidden;
-	border:1px solid #CCC9C9;
     margin: 0;
     padding: 0;
 }
@@ -82,10 +81,11 @@
 {
     display: none;
     float: left;
-	padding-right:5px;
+	margin-right:10px;
     height: 250px;
     min-height: 1px;
     background:#fff;
+    border:1px solid #CCC9C9;
 }
 .slick-slide a:hover{
 	color:#BB2828;
