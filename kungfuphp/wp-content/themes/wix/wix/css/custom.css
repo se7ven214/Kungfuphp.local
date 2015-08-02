@@ -389,11 +389,11 @@ h1 {
 }
 .footer {
 	margin: 80px auto;
-	color: #000;
-	background:#CCC9C9;
+	color: #20262B;
+	font-weight:600;
+	background:#CDCDCD;
 	text-align: center;
 	font-size:12px;
-	height:100px;
 }
 .footer a {
 	color: #BB2828;
