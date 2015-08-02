@@ -1,7 +1,7 @@
 <?php
 /**
  * The main template file.
- */	
+ */
 get_header();
 query_posts( 'posts_per_page=4' );
 $i=1;
@@ -14,13 +14,13 @@ $i=1;
         <div class="yourclass" style="background-color: #FFFFFF;">
               <?php
                     $popularpost  = new WP_Query( array( 'posts_per_page' => 8, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
-                    while ( $popularpost->have_posts() ) : 
+                    while ( $popularpost->have_posts() ) :
                         $popularpost->the_post();
 
                         // the_title();
                             $style = ($i==5 || $i==6) ? "":"border-bottom: 1px solid #e6e6e6;";
                             $i++;
-                ?>            
+                ?>
                         <div class="col-md-4 box" style="<?php echo $style; ?>">
                             <div class="article">
                                 <?php $wix_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>
@@ -38,8 +38,8 @@ $i=1;
                                         </div>
                                         </div>
                                     </div>
-                                </div>                               
-                               
+                                </div>
+
                                 <div class="post-box-details" style="margin-left:10px;width:210px;float:left">
                                 <a href="<?php the_permalink(); ?>"><?php  the_title(); ?></a>
                                    <?php  //the_excerpt(); ?>
@@ -48,10 +48,10 @@ $i=1;
                                     <ul>
                                         <?php wix_entry_meta();?>
                                    </ul>
-                                </div>                            
+                                </div>
                             </div>
-                        </div>  
-                <?php  
+                        </div>
+                <?php
                     endwhile;
                 ?>
             </div>
@@ -63,11 +63,11 @@ $i=1;
                     <span class="arrow"></span>
                 </h1>
             	<div class="detail-inner masonry-container">
-                <?php  if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>  
-                        <?php 
+                <?php  if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
+                        <?php
                             $style = ($i==5 || $i==6) ? "":"border-bottom: 1px solid #e6e6e6;";
                             $i++;
-                        ?>            
+                        ?>
                     <div class="col-md-4 box" style="<?php echo $style; ?>">
                     	<div class="article">
                         	<?php $wix_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>
@@ -85,8 +85,8 @@ $i=1;
                                    	</div>
                                     </div>
                                 </div>
-                            </div>                               
-                           
+                            </div>
+
                             <div class="post-box-details" style="margin-left:10px;width:210px;float:left">
                             <a href="<?php the_permalink(); ?>"><?php  the_title(); ?></a>
                                <?php  the_excerpt(); ?>
@@ -95,10 +95,10 @@ $i=1;
                         		<ul>
                                 	<?php wix_entry_meta();?>
                                </ul>
-                            </div>                            
+                            </div>
                         </div>
-                    </div>        
-                <?php endwhile; endif; // end have_posts() ?>    			
+                    </div>
+                <?php endwhile; endif; // end have_posts() ?>
                 </div>
                     <!--Pagination Start-->
                     <!--<?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
@@ -109,14 +109,14 @@ $i=1;
                     <div class="col-md-12">
                         <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
                     	<span class="default-pagination-next"><?php previous_posts_link(); ?></span>
-                        <span class="default-pagination-previous"><?php next_posts_link(); ?></span>                 	
+                        <span class="default-pagination-previous"><?php next_posts_link(); ?></span>
                      <?php } ?>
                     </div>
                     <?php } ?>
                     <?php }//is plugin active ?>
                     <!--Pagination End-->
                 <h1>
-                    Chủ đề mới 
+                    Chủ đề mới
                     <span class="arrow"></span>
                 </h1>
                 <?php
@@ -125,10 +125,10 @@ $i=1;
                 ?>
                 <div class="cma-content">
                 <ul class="cma-thread-orderby">
-                    <li<?php if( $currentSort == 'newest' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'newest'), get_pagenum_link(0))); ?>"><?php _e('Newest', 'cm-answers'); ?></a></li>
-                    <li<?php if( $currentSort == 'hottest' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'hottest'), get_pagenum_link(0))); ?>"><?php _e('Hottest', 'cm-answers'); ?></a></li>
-                    <?php if( CMA_AnswerThread::isRatingAllowed() ): ?><li<?php if( $currentSort == 'votes' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'votes'), get_pagenum_link(0))); ?>"><?php _e('Most votes', 'cm-answers'); ?></a></li><?php endif; ?>
-                    <li<?php if( $currentSort == 'views' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'views'), get_pagenum_link(0))); ?>"><?php _e('Most views', 'cm-answers'); ?></a></li>
+                    <li<?php if( $currentSort == 'newest' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'newest'), get_pagenum_link(0))); ?>"><?php _e('Mới nhất', 'cm-answers'); ?></a></li>
+                    <li<?php if( $currentSort == 'hottest' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'hottest'), get_pagenum_link(0))); ?>"><?php _e('Hot nhất', 'cm-answers'); ?></a></li>
+                    <?php if( CMA_AnswerThread::isRatingAllowed() ): ?><li<?php if( $currentSort == 'votes' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'votes'), get_pagenum_link(0))); ?>"><?php _e('Votes nhiều nhất', 'cm-answers'); ?></a></li><?php endif; ?>
+                    <li<?php if( $currentSort == 'views' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'views'), get_pagenum_link(0))); ?>"><?php _e('Xem nhiều nhất', 'cm-answers'); ?></a></li>
                 </ul>
                 </div>
                 <div class="cma-clear"></div>
@@ -184,15 +184,14 @@ $i=1;
                         wp_reset_postdata();
                         ?>
                     </div>
-                    <div class="cma-pagination"><?php
-                        echo paginate_links(array(
-                            'base'     => trailingslashit(get_post_type_archive_link(CMA_AnswerThread::POST_TYPE)) . '%_%',
-                            'format'   => 'page/%#%/',
-                            'current'  => max(1, get_query_var('paged')),
-                            'total'    => $GLOBALS['wp_query']->max_num_pages,
-                            'add_args' => $currentSort != 'newest' ? array('sort' => $currentSort) : array()
-                        ));
-                        ?></div>
+                    <div class="cma-pagination"><a href="http://kungfuphp.local/answers" style="    background: #004c9b none repeat scroll 0 0;
+                    font-weight: bold;
+                    height: 38px;
+                    line-height: 1.2;
+                    padding: 5px 5px;
+                    text-align: center;
+                    color:#fff;
+                    border-radius:2px;">Xem thêm</a></div>
             </article>
             <?php
              get_sidebar();

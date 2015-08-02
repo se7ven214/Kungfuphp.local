@@ -7,7 +7,7 @@ get_header();
             <div id="content" role="main" class="entry-content">
                 <header class="entry-header">
                     <h1 class="entry-title">
-                        <?php _e('All Questions', 'cm-answers'); ?>
+                        <?php _e('Tất cả câu hỏi', 'cm-answers'); ?>
                     </h1>
                 </header>
                 <div style="clear:both;height:15px;"></div>
@@ -17,10 +17,10 @@ get_header();
                 if (!ctype_alnum($currentSort)) $currentSort = 'newest';
                 ?>
                 <ul class="cma-thread-orderby">
-                    <li<?php if( $currentSort == 'newest' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'newest'), get_pagenum_link(0))); ?>"><?php _e('Newest', 'cm-answers'); ?></a></li>
-                    <li<?php if( $currentSort == 'hottest' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'hottest'), get_pagenum_link(0))); ?>"><?php _e('Hottest', 'cm-answers'); ?></a></li>
-                    <?php if( CMA_AnswerThread::isRatingAllowed() ): ?><li<?php if( $currentSort == 'votes' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'votes'), get_pagenum_link(0))); ?>"><?php _e('Most votes', 'cm-answers'); ?></a></li><?php endif; ?>
-                    <li<?php if( $currentSort == 'views' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'views'), get_pagenum_link(0))); ?>"><?php _e('Most views', 'cm-answers'); ?></a></li>
+                    <li<?php if( $currentSort == 'newest' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'newest'), get_pagenum_link(0))); ?>"><?php _e('Mới nhất', 'cm-answers'); ?></a></li>
+                    <li<?php if( $currentSort == 'hottest' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'hottest'), get_pagenum_link(0))); ?>"><?php _e('Hot nhất', 'cm-answers'); ?></a></li>
+                    <?php if( CMA_AnswerThread::isRatingAllowed() ): ?><li<?php if( $currentSort == 'votes' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'votes'), get_pagenum_link(0))); ?>"><?php _e('Votes nhiều nhất', 'cm-answers'); ?></a></li><?php endif; ?>
+                    <li<?php if( $currentSort == 'views' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'views'), get_pagenum_link(0))); ?>"><?php _e('Xem nhiều nhất', 'cm-answers'); ?></a></li>
                 </ul>
                 <div class="cma-clear"></div>
                 <div class="detail-inner masonry-container">
