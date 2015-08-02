@@ -777,6 +777,9 @@ input[type="search"] {
 
 .masonry-brick{
 /* 	padding-bottom:20px; */
+ background: #fff;
+	float: left;
+    width: 100%;
 }
 
 .slogan{

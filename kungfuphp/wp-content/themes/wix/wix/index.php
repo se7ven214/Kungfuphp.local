@@ -136,7 +136,7 @@ $i=1;
                             $thread = CMA_AnswerThread::getInstance(get_the_ID());
                             ?>
 
-                            <div class="col-md-12 topic" style="background: #fff;">
+                            <div class="col-md-12 topic">
                             <div class="article">
                             <div style="<?php echo $style; ?>margin-left:10px;width:100%;float:left;margin-bottom:10px">
                             <div class="StatBox ViewsBox AnswersBox" style="background: #73a550;color: #FFF;">
@@ -178,7 +178,7 @@ $i=1;
                         wp_reset_postdata();
                         ?>
                     </div>
-                    <div class="cma-pagination col-md-12"><a href="http://kungfuphp.local/answers" style="    background: #004c9b none repeat scroll 0 0;
+                    <div class="cma-pagination col-md-12" style="float: left;width: 100%;"><a href="http://kungfuphp.local/answers" style="    background: #004c9b none repeat scroll 0 0;
                     font-weight: bold;
                     height: 38px;
                     line-height: 1.2;
