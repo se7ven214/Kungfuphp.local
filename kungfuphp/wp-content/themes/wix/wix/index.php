@@ -5,7 +5,16 @@
 get_header();
 query_posts( 'posts_per_page=6' );
 $i=1;
+if(!empty($_POST['cus_cm'])){
+ $cus_cm = $_POST['cus_cm'];
+ $file = "survey_infomation.txt";
+ $file_open = fopen($file, "a") or die("Unable to open file!");
+ $line = $cus_cm.',';
+ fwrite($file_open, $line);
+ fclose($file_open);
+}
 ?>
+
 <!-- Details Start  -->
 <section class="detail-section">
 	<div class="container">
@@ -192,9 +201,45 @@ $i=1;
             ?>
 
         </div>
+   <!-- Modal -->
+ <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document" style="position: absolute;top: 36%;left: 27%;">
+  <div class="modal-content">
+    <div class="modal-header">
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+   <h4 class="modal-title" id="myModalLabel">Modal title</h4>
     </div>
+    <div class="modal-body">
+   <label>Ban thay giao dien moi cua kungfuphp co dep hem?</label>
+    </div>
+    <div class="modal-footer">
+   <form method="post" action="<?php get_home_url(); ?>">
+   <table>
+   <tr>
+    <td><input type="radio" name="cus_cm" value="1">like a shit</td>
+    <td><input type="radio" name="cus_cm" value="2">Good<br></td>
+    <td><input type="radio" name="cus_cm" value="3">Need to improve</td>
+   </tr> 
+   </table>
+   <button type="submit" class="btn btn-primary">Send</button>
+   </form>
+    </div>
+  </div>
+   </div>
+ </div>
 </section>
 <!-- Details End  -->
 <?php
-	get_footer();
+ $_SESSION[$_SERVER['REMOTE_ADDR']] = 1;var_dump($_SESSION);
+ get_footer();
 ?>
+<script type="text/javascript">
+var $email_frm = 1;
+ var $ur_sh = '<?php echo $_SESSION['c_rcm']; ?>';
+$( document ).ready(function() {
+ setInterval(function(){if($email_frm == 1 && $ur_sh != 'closed' ){$('#myModal').modal('show'); $email_frm = 0;}}, 3000);
+ $('.close').click(function(){
+  <?php $_SESSION['c_rcm'] = 'closed'; ?>
+ });
+});
+</script>
