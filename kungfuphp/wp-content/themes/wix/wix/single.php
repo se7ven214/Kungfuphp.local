@@ -8,10 +8,7 @@ get_header();
 <section class="detail-section">
 	<div class="container">
     	<div class="row details-mian">
-        	<?php 
-			get_sidebar();
-			?>
-            <article class="col-md-8">
+            <article class="col-md-9">
             	<div class="wix-inner-post">
                 	<?php  if ( have_posts() ) :  while ( have_posts() ) : the_post(); wpb_set_post_views(get_the_ID());
 ?>
@@ -55,7 +52,9 @@ get_header();
 		        <div ><?php echo do_shortcode('[fbcomments]'); ?></div>
                 
             </article>
-            
+            <?php 
+				get_sidebar();
+			?>
         </div>
 
     </div>
