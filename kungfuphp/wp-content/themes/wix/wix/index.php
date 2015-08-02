@@ -17,9 +17,9 @@ $i=1;
                     while ( $popularpost->have_posts() ) :
                         $popularpost->the_post();
 
-                        // the_title();                   
+                        // the_title();
                             $i++;
-                ?>            
+                ?>
                         <div class="col-md-2 box" style="<?php echo $style; ?>">
                             <div class="article">
                                 <?php $wix_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>
@@ -37,15 +37,15 @@ $i=1;
                                         </div>
                                         </div>
                                     </div>
-                                </div>                               
-                               
+                                </div>
+
                                 <div class="post-box-details" >
                                 <a href="<?php the_permalink(); ?>"><?php  the_title(); ?></a>
                                    <?php  //the_excerpt(); ?>
-                                </div>                          
+                                </div>
                             </div>
-                        </div>  
-                <?php  
+                        </div>
+                <?php
                     endwhile;
                 ?>
             </div>
@@ -138,7 +138,7 @@ $i=1;
 
                             <div class="col-md-12 topic">
                             <div class="article">
-                            <div style="<?php echo $style; ?>margin-left:10px;width:100%;float:left;margin-bottom:10px">
+                            <div style="margin-left:10px;width:100%;float:left;margin-bottom:10px">
                             <div class="StatBox ViewsBox AnswersBox" style="background: #73a550;color: #FFF;">
                             <span>Bình luận</span>
                             <?php

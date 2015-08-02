@@ -668,7 +668,7 @@ h1 {
     font-size: 19px;
     font-weight: normal;
     line-height: 22px;
-    margin-bottom: 10px;
+    border-bottom: 1px solid #F0F0F0;
     color: 
 }
 div.Meta {
