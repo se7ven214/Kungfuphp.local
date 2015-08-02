@@ -147,7 +147,8 @@ h1 {
 	width:100%;
 }
 .wix-widget li:hover{
-	background: #f0f0f0;
+	background: #1B966A;
+	color:#fff;
 }
 .wix-widget ul a:hover{
 	color:#000;
@@ -432,6 +433,7 @@ h1 {
 .wix-post-content {
 	margin: 25px 0px;
 	text-align: justify;
+	width:100%;
 }
 .wix-post-content img {
 	height: auto;
