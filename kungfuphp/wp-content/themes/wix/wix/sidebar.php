@@ -5,9 +5,23 @@
 	<div class="menu-right-border"></div>
 	<?php
 		$chuyenmuc = "<ul>";
-		$categories = get_categories();
+		$args = array(
+			'orderby'                  => 'cat_name',
+			'order'                    => 'ASC',
+		);
+		$categories = get_categories($args);
+		// echo "<pre>";
+		// print_r($categories);
 		foreach ($categories as $cat) {
-			if ($cat->category_parent == 0) {
+			if ($cat->category_parent == 0 &&
+				$cat->cat_ID == 68 || 
+				$cat->cat_ID == 54 ||
+				$cat->cat_ID == 4 ||
+				$cat->cat_ID == 1 ||
+				$cat->cat_ID == 2 ||
+				$cat->cat_ID == 3 ||
+				$cat->cat_ID == 61
+				) {
 				$chuyenmuc .= "<a href='".get_category_link($cat->cat_ID)."'><li>{$cat->cat_name}</li></a>";
 			}
 		}
