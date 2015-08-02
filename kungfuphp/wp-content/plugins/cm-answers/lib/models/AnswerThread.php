@@ -134,13 +134,13 @@ Click to see: [comment_link]';
     {
         return $this->post->post_content;
     }
-    
-    
+
+
 	public function getLightContent() {
     	return self::lightContent($this->getContent());
     }
-    
-    
+
+
     public static function lightContent($content) {
     	return preg_replace('/[\s\n\r\t]+/', ' ', strip_tags($content));
     }
@@ -249,7 +249,10 @@ Click to see: [comment_link]';
 
     public function getVotes()
     {
-        if( self::getVotesMode() == self::VOTES_MODE_COUNT ) return (int) $this->getPostMeta(self::$_meta['votes']);
+        if( self::getVotesMode() == self::VOTES_MODE_COUNT ){
+
+             return (int) $this->getPostMeta(self::$_meta['votes']);
+        }
         else return $this->getHighestRatedAnswer();
     }
 
@@ -365,7 +368,7 @@ Click to see: [comment_link]';
             );
             $rawComments = $wpdb->get_col($sql);
         }
-        
+
         $comments = array();
         if( !empty($rawComments) )
         {
@@ -906,18 +909,18 @@ Click to see: [comment_link]';
         }
         return $comments;
     }
-    
-    
+
+
     public function isVisible() {
     	return true;
     }
-    
-    
+
+
     public function getPermalink(array $query = array(), $backlink = false, $append = '') {
     	$result = get_permalink($this->getId()) . $append;
     	return add_query_arg(urlencode_deep($query), $result);
     }
-    
+
 	public function isPublished() {
     	return ($this->post->post_status == 'publish');
     }

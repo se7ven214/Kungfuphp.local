@@ -119,53 +119,87 @@ $i=1;
                     Chủ đề mới 
                     <span class="arrow"></span>
                 </h1>
+                <?php
+                $currentSort = !empty($_GET['sort']) ? $_GET['sort'] : 'newest';
+                if (!ctype_alnum($currentSort)) $currentSort = 'newest';
+                ?>
+                <div class="cma-content">
+                <ul class="cma-thread-orderby">
+                    <li<?php if( $currentSort == 'newest' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'newest'), get_pagenum_link(0))); ?>"><?php _e('Newest', 'cm-answers'); ?></a></li>
+                    <li<?php if( $currentSort == 'hottest' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'hottest'), get_pagenum_link(0))); ?>"><?php _e('Hottest', 'cm-answers'); ?></a></li>
+                    <?php if( CMA_AnswerThread::isRatingAllowed() ): ?><li<?php if( $currentSort == 'votes' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'votes'), get_pagenum_link(0))); ?>"><?php _e('Most votes', 'cm-answers'); ?></a></li><?php endif; ?>
+                    <li<?php if( $currentSort == 'views' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'views'), get_pagenum_link(0))); ?>"><?php _e('Most views', 'cm-answers'); ?></a></li>
+                </ul>
+                </div>
+                <div class="cma-clear"></div>
                 <div class="detail-inner masonry-container">
-                <?php  if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>  
-                        <?php 
-                            $style = ($i==5 || $i==6) ? "":"border-bottom: 1px solid #e6e6e6;";
-                            $i++;
-                        ?>            
-                    <div class="col-md-4 box topic">
-                        <div class="article">                             
-                           
+                        <?php
+
+                        $args = array('post_type' => 'cma_thread');
+                        $posttt = new WP_Query( $args );
+                        while($posttt->have_posts()):
+                            $posttt->the_post();
+                            $thread = CMA_AnswerThread::getInstance(get_the_ID());
+                            ?>
+
+                            <div class="col-md-4 box topic">
+                            <div class="article">
                             <div style="<?php echo $style; ?>margin-left:10px;width:100%;float:left;margin-bottom:10px">
-                           <div class="StatBox AnswersBox HasAnswersBox">
-                            <span>Comments</span>
-                            18
+                            <div class="StatBox AnswersBox HasAnswersBox">
+                            <span>Bình luận</span>
+                            <?php
+                            $numberOfAnswers = $thread->getNumberOfAnswers();
+                            echo $numberOfAnswers; ?>
                             </div>
                             <div class="StatBox ViewsBox">
-                            <span>Views</span>
-                            356
+                            <span>Xem</span>
+                            <?php
+                                $views = $thread->getViews();
+                                echo $views;
+                            ?>
                             </div>
+                            <?php if( CMA_AnswerThread::isRatingAllowed() ): ?>
+                            <div class="StatBox ViewsBox" style="background: #73a550;color: #FFF;">
+                            <span>Thích</span>
+                            <?php
+                                $votes = $thread->getVotes();
+                                                echo $votes;
+                            ?>
+                            </div>
+                            <?php endif; ?>
                             <div class="ItemContent Discussion">
-                                <a style="color:#282828" href="<?php the_permalink(); ?>"><?php  the_title(); ?></a>
+                                <a style="color:#282828" href="<?php echo esc_attr(get_permalink(get_the_ID())); ?>"><?php echo $thread->getTitle(); ?></a>
                             <div class="Meta">
-                            <span class="Announcement">Announcement</span>
-                            <span class="CommentCount">19 comments</span>
-                            <span class="LastCommentBy">
-                            Most recent by
-                                <a href="/index.php?p=/profile/15732/SreenivasKanumuru">SreenivasKanumuru</a>
-                            </span>
-                            <span class="LastCommentDate">July 22</span>
-                            <span>
-                                <a class="Category" href="/index.php?p=/categories/vtiger-crm-mobile-apps">vtiger CRM - Mobile Apps</a>
-                            </span>
+                            <span class="Announcement"><?php echo $thread->getLastPosterName();?></span>
+                            <span class="LastCommentDate"><?php printf(__('updated %s by %s', 'cm-answers'),
+                                    	CMA_AnswerThread::renderDaysAgo($thread->getUnixUpdated()), $thread->getLastPosterName()); ?></span>
                             </div>
                             </div>
-                               <?php  //the_excerpt(); ?>
-                            </div>                       
-                        </div>
-                    </div>        
-
-                <?php endwhile; endif; // end have_posts() ?>               
+                            </div>
+                            </div>
+                            </div>
+                            <?php
+                        endwhile;
+                        wp_reset_query();
+                        wp_reset_postdata();
+                        ?>
                     </div>
+                    <div class="cma-pagination"><?php
+                        echo paginate_links(array(
+                            'base'     => trailingslashit(get_post_type_archive_link(CMA_AnswerThread::POST_TYPE)) . '%_%',
+                            'format'   => 'page/%#%/',
+                            'current'  => max(1, get_query_var('paged')),
+                            'total'    => $GLOBALS['wp_query']->max_num_pages,
+                            'add_args' => $currentSort != 'newest' ? array('sort' => $currentSort) : array()
+                        ));
+                        ?></div>
             </article>
             <?php
              get_sidebar();
             ?>
 
         </div>
-    </div>    
+    </div>
 </section>
 <!-- Details End  -->
 <?php
