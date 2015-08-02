@@ -20,13 +20,13 @@
     <?php if(!empty($wix_options['favicon'])) { ?>
 	<link rel="shortcut icon" href="<?php echo esc_url($wix_options['favicon']);?>" type="image/x-icon">
     <?php } ?>
-
     <title><?php wp_title( '|', true, 'right' ); ?></title>
     <!--[if lt IE 9]>
       <script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
     <![endif]-->
 
     <?php wp_head();?>
+    
 </head>
 
 <body <?php body_class(); ?>>

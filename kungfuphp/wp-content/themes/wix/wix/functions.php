@@ -627,3 +627,15 @@ function wpb_get_post_views($postID){
     }
     return $count.' Views';
 }
+
+add_action( 'wp_enqueue_scripts', 'add_my_script' );
+function add_my_script() {
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', false, '1.9.1');
+    wp_enqueue_script('jquery');
+    wp_enqueue_style( 'slider_style', get_template_directory_uri() . '/js/slick/slick.css' );
+    wp_enqueue_style( 'slider_style1', get_template_directory_uri() . '/js/slick/slick-theme.css' );
+    wp_enqueue_script( 'slider_custom', get_template_directory_uri() . '/js/slick/slick.min.js' );
+    wp_enqueue_script( 'slider_custom1', get_template_directory_uri() . '/js/slider_custom.js' );
+
+}

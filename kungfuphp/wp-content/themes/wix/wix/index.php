@@ -9,9 +9,54 @@ $i=1;
 <!-- Details Start  -->
 <section class="detail-section">
 	<div class="container">
-	<?php echo do_shortcode('[carousel-horizontal-posts-content-slider]'); ?>
+	<?php //echo do_shortcode('[carousel-horizontal-posts-content-slider]'); ?>
+    <div class="row">
+        <div class="yourclass" style="background-color: #FFFFFF;">
+              <?php
+                    $popularpost  = new WP_Query( array( 'posts_per_page' => 8, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
+                    while ( $popularpost->have_posts() ) : 
+                        $popularpost->the_post();
+
+                        // the_title();
+                            $style = ($i==5 || $i==6) ? "":"border-bottom: 1px solid #e6e6e6;";
+                            $i++;
+                ?>            
+                        <div class="col-md-4 box" style="<?php echo $style; ?>">
+                            <div class="article">
+                                <?php $wix_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>
+                                <div class="post-box-img" style="width:150px;float:left">
+
+                                    <?php if($wix_feat_image){ ?>
+                                    <a href="<?php the_permalink(); ?>"><img src="<?php echo $wix_feat_image; ?>" alt="banner" /></a>
+                                    <?php } else { ?>
+                                    <a href="<?php the_permalink(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png" alt="banner" /></a>
+                                    <?php } ?>
+                                    <div class="post-box-hover">
+                                        <div class="post-box-hover-center">
+                                        <div class="post-box-hover-center1">
+                                            <a href="<?php echo get_permalink(); ?>"><i class="zoom-icon"></i></a>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>                               
+                               
+                                <div class="post-box-details" style="margin-left:10px;width:210px;float:left">
+                                <a href="<?php the_permalink(); ?>"><?php  the_title(); ?></a>
+                                   <?php  //the_excerpt(); ?>
+                                </div>
+                                <div class="post-box-link" style="width:300px;float:left">
+                                    <ul>
+                                        <?php wix_entry_meta();?>
+                                   </ul>
+                                </div>                            
+                            </div>
+                        </div>  
+                <?php  
+                    endwhile;
+                ?>
+            </div>
+        </div>
     	<div class="row details-mian">
-            
             <article class="col-md-9 no-padding-left" >
                 <h1>
                     Bài viết mới nhất
@@ -53,57 +98,8 @@ $i=1;
                             </div>                            
                         </div>
                     </div>        
-
                 <?php endwhile; endif; // end have_posts() ?>    			
                 </div>
-                <h1>
-                    Bài viết hot nhất
-                </h1>
-                <div class="detail-inner masonry-container">
-                <?php
-                    $popularpost  = new WP_Query( array( 'posts_per_page' => 4, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
-                    while ( $popularpost->have_posts() ) : 
-                        $popularpost->the_post();
-
-                        // the_title();
-                            $style = ($i==5 || $i==6) ? "":"border-bottom: 1px solid #e6e6e6;";
-                            $i++;
-                ?>            
-                        <div class="col-md-4 box" style="<?php echo $style; ?>">
-                            <div class="article">
-                                <?php $wix_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>
-                                <div class="post-box-img" style="width:150px;float:left">
-
-                                    <?php if($wix_feat_image){ ?>
-                                    <a href="<?php the_permalink(); ?>"><img src="<?php echo $wix_feat_image; ?>" alt="banner" /></a>
-                                    <?php } else { ?>
-                                    <a href="<?php the_permalink(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png" alt="banner" /></a>
-                                    <?php } ?>
-                                    <div class="post-box-hover">
-                                        <div class="post-box-hover-center">
-                                        <div class="post-box-hover-center1">
-                                            <a href="<?php echo get_permalink(); ?>"><i class="zoom-icon"></i></a>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>                               
-                               
-                                <div class="post-box-details" style="margin-left:10px;width:210px;float:left">
-                                <a href="<?php the_permalink(); ?>"><?php  the_title(); ?></a>
-                                   <?php  the_excerpt(); ?>
-                                </div>
-                                <div class="post-box-link" style="width:300px;float:left">
-                                    <ul>
-                                        <?php wix_entry_meta();?>
-                                   </ul>
-                                </div>                            
-                            </div>
-                        </div>  
-                <?php  
-                    endwhile;
-                ?>
-                </div>
-      
                     <!--Pagination Start-->
                     <!--<?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
                     <?php if(is_plugin_active('faster-pagination/ft-pagination.php')) {?>
