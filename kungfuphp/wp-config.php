@@ -17,17 +17,17 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('WP_CACHE', true); //Added by WP-Cache Manager
-define( 'WPCACHEHOME', '/home/kungfu/domains/kungfuphp.com/public_html/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
-define('DB_NAME', 'kungfu_wordpress');
+define( 'WPCACHEHOME', 'H:\BitNami\wampstack\apache2\htdocs\Kungfuphp.local\kungfuphp\wp-content\plugins\wp-super-cache/' ); //Added by WP-Cache Manager
+define('DB_NAME', 'kungfuphp');
 
 /** MySQL database username */
-define('DB_USER', 'kungfu_wordpress');
+define('DB_USER', 'thanhnhat');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'kungfuphppassword');
+define('DB_PASSWORD', 'nhat123');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', '210.211.117.48');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
