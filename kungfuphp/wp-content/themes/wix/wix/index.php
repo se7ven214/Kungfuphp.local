@@ -136,10 +136,10 @@ $i=1;
                             $thread = CMA_AnswerThread::getInstance(get_the_ID());
                             ?>
 
-                            <div class="col-md-4 box topic">
+                            <div class="col-md-12 topic" style="background: #fff;">
                             <div class="article">
                             <div style="<?php echo $style; ?>margin-left:10px;width:100%;float:left;margin-bottom:10px">
-                            <div class="StatBox AnswersBox HasAnswersBox">
+                            <div class="StatBox ViewsBox AnswersBox" style="background: #73a550;color: #FFF;">
                             <span>Bình luận</span>
                             <?php
                             $numberOfAnswers = $thread->getNumberOfAnswers();
@@ -153,7 +153,7 @@ $i=1;
                             ?>
                             </div>
                             <?php if( CMA_AnswerThread::isRatingAllowed() ): ?>
-                            <div class="StatBox ViewsBox" style="background: #73a550;color: #FFF;">
+                            <div class="StatBox HasAnswersBox">
                             <span>Thích</span>
                             <?php
                                 $votes = $thread->getVotes();
@@ -178,7 +178,7 @@ $i=1;
                         wp_reset_postdata();
                         ?>
                     </div>
-                    <div class="cma-pagination"><a href="http://kungfuphp.local/answers" style="    background: #004c9b none repeat scroll 0 0;
+                    <div class="cma-pagination col-md-12"><a href="http://kungfuphp.local/answers" style="    background: #004c9b none repeat scroll 0 0;
                     font-weight: bold;
                     height: 38px;
                     line-height: 1.2;

@@ -668,7 +668,6 @@ h1 {
     font-size: 19px;
     font-weight: normal;
     line-height: 22px;
-    padding: 7px 0 5px;
     margin-bottom: 10px;
     color: 
 }
@@ -777,7 +776,7 @@ input[type="search"] {
 }
 
 .masonry-brick{
-	padding-bottom:20px;
+/* 	padding-bottom:20px; */
 }
 
 .slogan{
