@@ -128,10 +128,10 @@ if(!empty($_POST['cus_cm'])){
                 ?>
                 <div class="cma-content">
                 <ul class="cma-thread-orderby">
-                    <li<?php if( $currentSort == 'newest' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'newest'), get_pagenum_link(0))); ?>"><?php _e('Mới nhất', 'cm-answers'); ?></a></li>
-                    <li<?php if( $currentSort == 'hottest' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'hottest'), get_pagenum_link(0))); ?>"><?php _e('Hot nhất', 'cm-answers'); ?></a></li>
-                    <?php if( CMA_AnswerThread::isRatingAllowed() ): ?><li<?php if( $currentSort == 'votes' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'votes'), get_pagenum_link(0))); ?>"><?php _e('Votes nhiều nhất', 'cm-answers'); ?></a></li><?php endif; ?>
-                    <li<?php if( $currentSort == 'views' ): ?> class="cma-current-sort"<?php endif; ?>><a href="<?php echo esc_attr(add_query_arg(array('sort' => 'views'), get_pagenum_link(0))); ?>"><?php _e('Xem nhiều nhất', 'cm-answers'); ?></a></li>
+                    <a href="<?php echo esc_attr(add_query_arg(array('sort' => 'newest'), get_pagenum_link(0))); ?>"><li<?php if( $currentSort == 'newest' ): ?> class="cma-current-sort"<?php endif; ?>><?php _e('Mới nhất', 'cm-answers'); ?></li></a>
+                    <a href="<?php echo esc_attr(add_query_arg(array('sort' => 'hottest'), get_pagenum_link(0))); ?>"><li<?php if( $currentSort == 'hottest' ): ?> class="cma-current-sort"<?php endif; ?>><?php _e('Hot nhất', 'cm-answers'); ?></li></a>
+                    <a href="<?php echo esc_attr(add_query_arg(array('sort' => 'votes'), get_pagenum_link(0))); ?>"><?php if( CMA_AnswerThread::isRatingAllowed() ): ?><li<?php if( $currentSort == 'votes' ): ?> class="cma-current-sort"<?php endif; ?>><?php _e('Votes nhiều nhất', 'cm-answers'); ?></li></a><?php endif; ?>
+                    <a href="<?php echo esc_attr(add_query_arg(array('sort' => 'views'), get_pagenum_link(0))); ?>"><li<?php if( $currentSort == 'views' ): ?> class="cma-current-sort"<?php endif; ?>><?php _e('Xem nhiều nhất', 'cm-answers'); ?></li></a>
                 </ul>
                 </div>
                 <div class="cma-clear"></div>
