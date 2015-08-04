@@ -185,14 +185,12 @@ if(!empty($_POST['cus_cm'])){
                         wp_reset_postdata();
                         ?>
                     </div>
-                    <div class="cma-pagination col-md-12" style="float: left;width: 100%;"><a href="http://kungfuphp.local/answers" style="    background: #BB2828 none repeat scroll 0 0;
-                    font-weight: bold;
+                    <div class="cma-pagination col-md-12" style="float: left;width: 100%;"><a href="http://kungfuphp.local/answers" style="    background: #58585A none repeat scroll 0 0;
                     height: 38px;
-                    line-height: 1.2;
+                    line-height: 1;
                     padding: 5px 5px;
                     text-align: center;
-                    color:#fff;
-                    border-radius:2px;">Xem thêm</a></div>
+                    color:#fff;">Xem thêm</a></div>
 	             
 	            <div class="detail-inner masonry-container">
 		            <h1>

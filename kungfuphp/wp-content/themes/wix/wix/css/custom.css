@@ -681,7 +681,7 @@ div.Meta {
     font-size: 11px;
 }
 div.Meta span.Announcement {
-    background: #a2cb2d none repeat scroll 0 0;
+    background: #bb2828 none repeat scroll 0 0;
     color: #fff;
 }
 .Meta span, .DataList .Meta strong {
@@ -689,7 +689,6 @@ div.Meta span.Announcement {
 }
 .Meta .Announcement {
     background: #777777 none repeat scroll 0 0;
-    border-radius: 2px;
     color: #ffffff;
     font-weight: bold;
     padding: 1px 4px;
@@ -699,8 +698,6 @@ div.Meta span.Announcement {
 }
 .AnswersBox {
     background: #0053a9 none repeat scroll 0 0;
-    border-bottom-right-radius: 2px;
-    border-top-right-radius: 2px;
     margin-right: 4px;
 }
 .StatBox, .StatBox a {
