@@ -187,7 +187,7 @@ if(!empty($_POST['cus_cm'])){
                         wp_reset_postdata();
                         ?>
                     </div>
-                    <div class="cma-pagination col-md-12" style="float: left;width: 100%;"><a href="http://kungfuphp.local/answers" style="    background: #004c9b none repeat scroll 0 0;
+                    <div class="cma-pagination col-md-12" style="float: left;width: 100%;"><a href="http://kungfuphp.local/answers" style="    background: #BB2828 none repeat scroll 0 0;
                     font-weight: bold;
                     height: 38px;
                     line-height: 1.2;
