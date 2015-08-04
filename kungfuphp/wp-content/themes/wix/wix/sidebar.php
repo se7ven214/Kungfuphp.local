@@ -1,5 +1,6 @@
 <article class="col-md-3 no-padding-left">
 	<div class="wix-sidebar">
+	<a href="#" class="btn-new-topic"><img src="<?php echo home_url( '/' ); ?>wp-content/uploads/2015/01/btn-new-topic.png"/></a>
 	<div align="center" class="wix-widget">
 	<h4>Chuyên Mục</h4>
 	<div class="menu-right-border"></div>

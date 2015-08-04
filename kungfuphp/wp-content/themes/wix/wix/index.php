@@ -62,8 +62,7 @@ if(!empty($_POST['cus_cm'])){
     	<div class="row details-mian">
             <article class="col-md-9 no-padding-left" >
                 <h1>
-                    Bài viết mới nhất
-                    <span class="arrow"></span>
+                    Bài viết mới nhất               
                 </h1>
             	<div class="detail-inner masonry-container">
                 <?php  if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
@@ -119,8 +118,7 @@ if(!empty($_POST['cus_cm'])){
                     <?php }//is plugin active ?>
                     <!--Pagination End-->
                 <h1>
-                    Chủ đề mới
-                    <span class="arrow"></span>
+                    Chủ đề mới                   
                 </h1>
                 <?php
                 $currentSort = !empty($_GET['sort']) ? $_GET['sort'] : 'newest';
@@ -187,14 +185,36 @@ if(!empty($_POST['cus_cm'])){
                         wp_reset_postdata();
                         ?>
                     </div>
-                    <div class="cma-pagination col-md-12" style="float: left;width: 100%;"><a href="http://kungfuphp.local/answers" style="    background: #BB2828 none repeat scroll 0 0;
-                    font-weight: bold;
+                    <div class="cma-pagination col-md-12" style="float: left;width: 100%;"><a href="http://kungfuphp.local/answers" style="    background: #58585A none repeat scroll 0 0;
                     height: 38px;
-                    line-height: 1.2;
+                    line-height: 1;
                     padding: 5px 5px;
                     text-align: center;
-                    color:#fff;
-                    border-radius:2px;">Xem thêm</a></div>
+                    color:#fff;">Xem thêm</a></div>
+	             
+	            <div class="detail-inner masonry-container">
+		            <h1>
+		                    Tuyển dụng	                 
+		            </h1>
+		            <?php 
+		            $args = array( 'posts_per_page' => 6, 'offset'=> 1, 'category' => 57 );
+					$posts_array = get_posts( $args ); ?>
+					<ul>
+					<?php foreach ( $posts_array as $post ) : setup_postdata( $post );
+					$wix_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>
+					
+					
+						<li class="col-md-4">
+							<div class="recruitment">
+								<img src="<?php echo $wix_feat_image; ?>" style="height: 30px"/><br>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							</div>
+						</li>
+						
+					<?php endforeach; 
+					wp_reset_postdata();?>
+					</ul>
+	            </div>
             </article>
             <?php
              get_sidebar();

@@ -233,6 +233,7 @@ h1 {
 	margin-top: 40px;
 	border-left:2px solid #BB2828;
 }
+.detail-inner h1{background:#dfdfdf;}
 .post-box {
 	margin: 0 auto 0 0;
 	width: 92%;
@@ -680,7 +681,7 @@ div.Meta {
     font-size: 11px;
 }
 div.Meta span.Announcement {
-    background: #a2cb2d none repeat scroll 0 0;
+    background: #bb2828 none repeat scroll 0 0;
     color: #fff;
 }
 .Meta span, .DataList .Meta strong {
@@ -688,7 +689,6 @@ div.Meta span.Announcement {
 }
 .Meta .Announcement {
     background: #777777 none repeat scroll 0 0;
-    border-radius: 2px;
     color: #ffffff;
     font-weight: bold;
     padding: 1px 4px;
@@ -698,8 +698,6 @@ div.Meta span.Announcement {
 }
 .AnswersBox {
     background: #0053a9 none repeat scroll 0 0;
-    border-bottom-right-radius: 2px;
-    border-top-right-radius: 2px;
     margin-right: 4px;
 }
 .StatBox, .StatBox a {
@@ -810,4 +808,14 @@ input[type="search"] {
 	width:100%;
 	border-bottom:1px solid #CCC9C9;
 	margin-bottom:10px;
+}
+.recruitment{
+	position: relative;
+	padding: 50px;
+	margin: 0 auto 20px;
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	font-weight:600;
 }
