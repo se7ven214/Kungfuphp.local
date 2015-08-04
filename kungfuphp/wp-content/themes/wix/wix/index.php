@@ -19,21 +19,18 @@ if(!empty($_POST['cus_cm'])){
 <section class="detail-section">
 	<div class="container">
 	<?php //echo do_shortcode('[carousel-horizontal-posts-content-slider]'); ?>
-    <div class="row">
+    <!-- <div class="row"> -->
         <div class="yourclass">
               <?php
                     $popularpost  = new WP_Query( array( 'posts_per_page' => 8, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
                     while ( $popularpost->have_posts() ) :
                         $popularpost->the_post();
-
-                        // the_title();
-                            $i++;
+                        $i++;
                 ?>
-                        <div class="col-md-2 box" style="<?php echo $style; ?>">
+                        <div>
                             <div class="article">
                                 <?php $wix_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>
                                 <div class="post-box-img">
-
                                     <?php if($wix_feat_image){ ?>
                                     <a href="<?php the_permalink(); ?>"><img src="<?php echo $wix_feat_image; ?>" alt="banner" /></a>
                                     <?php } else { ?>
@@ -50,7 +47,6 @@ if(!empty($_POST['cus_cm'])){
 
                                 <div class="post-box-details" >
                                 <a href="<?php the_permalink(); ?>"><?php  the_title(); ?></a>
-                                   <?php  //the_excerpt(); ?>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +54,7 @@ if(!empty($_POST['cus_cm'])){
                     endwhile;
                 ?>
             </div>
-        </div>
+        <!-- </div> -->
     	<div class="row details-mian">
             <article class="col-md-9 no-padding-left" >
                 <h1>
@@ -253,12 +249,12 @@ if(!empty($_POST['cus_cm'])){
  get_footer();
 ?>
 <script type="text/javascript">
-var $email_frm = 1;
- var $ur_sh = '<?php echo $_SESSION['c_rcm']; ?>';
-$( document ).ready(function() {
- setInterval(function(){if($email_frm == 1 && $ur_sh != 'closed' ){$('#myModal').modal('show'); $email_frm = 0;}}, 3000);
- $('.close').click(function(){
-  <?php $_SESSION['c_rcm'] = 'closed'; ?>
- });
-});
+    var $email_frm = 1;
+    var $ur_sh = '<?php echo $_SESSION['c_rcm']; ?>';
+    $( document ).ready(function() {
+        setInterval(function(){if($email_frm == 1 && $ur_sh != 'closed' ){$('#myModal').modal('show'); $email_frm = 0;}}, 3000);
+        $('.close').click(function(){
+            <?php $_SESSION['c_rcm'] = 'closed'; ?>
+        });
+    });
 </script>
