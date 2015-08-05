@@ -16,7 +16,7 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php if(!empty($wix_options['favicon'])) { ?>
 	<link rel="shortcut icon" href="<?php echo esc_url($wix_options['favicon']);?>" type="image/x-icon">
     <?php } ?>
@@ -26,7 +26,7 @@
     <![endif]-->
 
     <?php wp_head();?>
-    
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -47,29 +47,29 @@
 					'after'           => '',
 					'link_before'     => '',
 					'link_after'      => '',
-					'items_wrap'      => '<ul>%3$s</ul>',
+					'items_wrap'      => '<ul><li><a href="http://kungfuphp.local/" style="padding: 8px 0 0 0;"><img src="http://kungfuphp.local/wp-content/uploads/2015/01/logo-kungfuphp.png" style="width:50px;margin-top:-8px;"/></a></li><li>&nbsp;&nbsp;&nbsp;&nbsp;</li> %3$s</ul>',
 					'depth'           => 0,
 					'walker'          => ''
 					);
 			wp_nav_menu($wix_args); ?>
 			<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
 				<label>
-					<input type="search" 
-		                class="search-field" 
-		                placeholder="Tìm bài viết"  
-		                value="" name="s" 
+					<input type="search"
+		                class="search-field"
+		                placeholder="Tìm bài viết"
+		                value="" name="s"
 		                title="Tìm bài viết">
 				</label>
 				<input type="submit" class="search-submit" value="Search">
 			</form>
     </article>
-    
+
 	<section class="container">
     	<article class="row">
         	<?php if ( get_header_image() ) : ?>
 		      <div id="site-header"> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"> <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt=""> </a> </div>
       		<?php endif; ?>
-            
+
         	<!-- <div class="logo">
         	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
             <?php if(empty( $wix_options['logo'])){
@@ -80,19 +80,19 @@
         </a>
         </div> -->
             <div class="navbar-header pull-right">
-          	<button type="button" class="navbar-toggle navbar-toggle-top" data-toggle="collapse" data-target=".navbar-collapse"> 
-                <span class="sr-only">Toggle navigation</span> 
-                <span class="icon-bar icon-color"></span> 
-                <span class="icon-bar icon-color"></span> 
-                <span class="icon-bar icon-color"></span> 
+          	<button type="button" class="navbar-toggle navbar-toggle-top" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar icon-color"></span>
+                <span class="icon-bar icon-color"></span>
+                <span class="icon-bar icon-color"></span>
             </button>
-            
+
             </div>
 
         </article>
         <div class="clearfix"></div>
         <div align="center">
-        <img src="<?php echo home_url( '/' ); ?>wp-content/uploads/2015/01/avatar-kungfu-php.png" style="height:7%;width:7%;float:left;margin:4.5% 0 0 30px;"/>
+
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- ads header -->
                 <ins class="adsbygoogle"
@@ -105,7 +105,7 @@
             </div>
         <article class="slogan">
         	<span style="font-size:15px; font-weight:600;"><marquee direction="left" width="90%">"Bạn giàu có bao nhiêu phụ thuộc vào việc bạn cho đi bao nhiêu chứ không phải việc bạn sở hữu bao nhiêu tiền"</marquee></span>
-       		 
+
          </article>
     </section>
 </header>
