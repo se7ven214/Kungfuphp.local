@@ -90,20 +90,20 @@ get_header();
                         <form method="post" class="cma-thread-add" id="cma-thread-add">
                             <input type="hidden" name="cma-action" value="add" />
                             <input type="hidden" name="nonce" value="<?php echo esc_attr(wp_create_nonce('cma_question')); ?>" />
-                            <h3><?php _e('Ask a Question', 'cm-answers'); ?></h3>
+                            <h3><?php _e('Đặt câu hỏi', 'cm-answers'); ?></h3>
                             <div style="clear:both;height:10px;"></div>
                             <ul class="cma-form-notes">
-                                <li><?php _e('Allow markup', 'cm-answers'); ?>: &lt;strong&gt;, &lt;em&gt;, &lt;a&gt;</li>
-                                <li><?php _e('Wrap your code using', 'cm-answers'); ?> &lt;pre&gt;&lt;/pre&gt;</li>
+                                <li><?php _e('Ký tự cho phép', 'cm-answers'); ?>: &lt;strong&gt;, &lt;em&gt;, &lt;a&gt;</li>
+                                <li><?php _e('Ký tự chia khoảng', 'cm-answers'); ?> &lt;pre&gt;&lt;/pre&gt;</li>
                             </ul>
-                            <input type="text" size="50" name="thread_title" placeholder="<?php _e('Question Title', 'cm-answers'); ?>" /><br />
-                            <textarea name="thread_comment" cols="50" rows="3" placeholder="<?php _e('What is your Question about?', 'cm-answers'); ?>"></textarea><br />
+                            <input type="text" size="50" name="thread_title" placeholder="<?php _e('Tiêu đề câu hỏi', 'cm-answers'); ?>" /><br />
+                            <textarea name="thread_comment" cols="50" rows="10" placeholder="<?php _e('Câu hỏi của bạn là gì?', 'cm-answers'); ?>"></textarea><br />
                             <div style="clear:both;height:5px;"></div>
                             <label>
                                 <input name="thread_notify" type="checkbox" value="1"/>
-                                <?php _e('Notify me of follow', 'cm-answers'); ?></label><br />
+                                <?php _e('Theo dõi', 'cm-answers'); ?></label><br />
                             <div style="clear:both;height:10px;"></div>
-                            <input type="submit" value="<?php _e('Add Question', 'cm-answers'); ?>" />
+                            <input type="submit" class="button button-primary button-large" value="<?php _e('Gửi câu hỏi', 'cm-answers'); ?>" />
                         </form>
                         <?php
                     else:
@@ -112,11 +112,11 @@ get_header();
                     ?>
                 </div>
             </div>
-            <span class="cma_poweredby">
-            	<a href="http://cminds.com/" target="_blank" class="cma_poweredbylink">CreativeMinds WordPress</a>
-            	<a href="https://www.cminds.com/store/" target="_blank" class="cma_poweredbylink">Plugin Store</a>
-            	<a href="https://www.cminds.com/store/answers/" target="_blank" class="cma_poweredbylink">CM Answers</a>
-            </span>
+<!--             <span class="cma_poweredby"> -->
+<!--             	<a href="http://cminds.com/" target="_blank" class="cma_poweredbylink">CreativeMinds WordPress</a> -->
+<!--             	<a href="https://www.cminds.com/store/" target="_blank" class="cma_poweredbylink">Plugin Store</a> -->
+<!--             	<a href="https://www.cminds.com/store/answers/" target="_blank" class="cma_poweredbylink">CM Answers</a> -->
+<!--             </span> -->
 
         </div>
         <?php if( CMA_AnswerThread::isSidebarEnabled() && is_active_sidebar('cm-answers-sidebar') ): ?>

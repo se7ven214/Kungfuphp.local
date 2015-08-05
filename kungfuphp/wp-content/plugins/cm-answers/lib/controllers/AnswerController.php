@@ -16,8 +16,8 @@ class CMA_AnswerController extends CMA_BaseController
         add_action('pre_get_posts', array(get_class(), 'registerCustomOrder'), 1, 1);
         add_action('CMA_login_form', array(get_class(), 'showLoginForm'));
     }
-    
-    
+
+
     public static function registerSidebars() {
     	register_sidebar(array(
             'id' => 'cm-answers-sidebar',
@@ -172,9 +172,9 @@ class CMA_AnswerController extends CMA_BaseController
             }
             else
             {
-            	
+
             	do_action('cma_answer_post_after', $thread, CMA_Answer::getById($comment_id));
-            	
+
                 $autoApprove = CMA_AnswerThread::isAnswerAutoApproved();
                 if($autoApprove)
                 {
@@ -244,12 +244,12 @@ class CMA_AnswerController extends CMA_BaseController
                 $autoApprove = CMA_AnswerThread::isQuestionAutoApproved();
                 if($autoApprove)
                 {
-                    $msg = __('New question has been succesfully added.', 'cm-answers');
+                    $msg = __('Thêm câu hỏi mới thành công.', 'cm-answers');
                     self::_addMessage(self::MESSAGE_SUCCESS, $msg);
                 }
                 else
                 {
-                    $msg = __('Thank you for your question, it has been held for moderation.', 'cm-answers');
+                    $msg = __('Cám ơn bạn đã đặt câu hỏi, câu hỏi đã được chuyển cho admin.', 'cm-answers');
                     self::_addMessage(self::MESSAGE_SUCCESS, $msg);
                 }
                 wp_redirect(get_post_type_archive_link(CMA_AnswerThread::POST_TYPE), 303);

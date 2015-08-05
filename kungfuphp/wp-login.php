@@ -553,7 +553,7 @@ case 'retrievepassword' :
 
 <form name="lostpasswordform" id="lostpasswordform" action="<?php echo esc_url( network_site_url( 'wp-login.php?action=lostpassword', 'login_post' ) ); ?>" method="post">
 	<p>
-		<label for="user_login" ><?php _e('Username or E-mail:') ?><br />
+		<label for="user_login" ><?php _e('Tên đăng nhập hoặc E-mail:') ?><br />
 		<input type="text" name="user_login" id="user_login" class="input" value="<?php echo esc_attr($user_login); ?>" size="20" /></label>
 	</p>
 	<?php
@@ -728,12 +728,12 @@ case 'register' :
 	 * @param string $registration_redirect The redirect destination URL.
 	 */
 	$redirect_to = apply_filters( 'registration_redirect', $registration_redirect );
-	login_header(__('Registration Form'), '<p class="message register">' . __('Register For This Site') . '</p>', $errors);
+	login_header(__('Registration Form'), '<p class="message register">' . __('Đăng ký tài khoản') . '</p>', $errors);
 ?>
 
 <form name="registerform" id="registerform" action="<?php echo esc_url( site_url('wp-login.php?action=register', 'login_post') ); ?>" method="post" novalidate="novalidate">
 	<p>
-		<label for="user_login"><?php _e('Username') ?><br />
+		<label for="user_login"><?php _e('Tên đăng nhập') ?><br />
 		<input type="text" name="user_login" id="user_login" class="input" value="<?php echo esc_attr(wp_unslash($user_login)); ?>" size="20" /></label>
 	</p>
 	<p>
@@ -748,15 +748,15 @@ case 'register' :
 	 */
 	do_action( 'register_form' );
 	?>
-	<p id="reg_passmail"><?php _e('A password will be e-mailed to you.') ?></p>
+	<p id="reg_passmail"><?php _e('Mật khẩu sẻ được gửi vào Email của bạn.') ?></p>
 	<br class="clear" />
 	<input type="hidden" name="redirect_to" value="<?php echo esc_attr( $redirect_to ); ?>" />
-	<p class="submit"><input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="<?php esc_attr_e('Register'); ?>" /></p>
+	<p class="submit"><input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="<?php esc_attr_e('Đăng ký'); ?>" /></p>
 </form>
 
 <p id="nav">
-<a href="<?php echo esc_url( wp_login_url() ); ?>"><?php _e( 'Log in' ); ?></a> |
-<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>" title="<?php esc_attr_e( 'Password Lost and Found' ) ?>"><?php _e( 'Lost your password?' ); ?></a>
+<a href="<?php echo esc_url( wp_login_url() ); ?>"><?php _e( 'Đăng nhập' ); ?></a> |
+<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>" title="<?php esc_attr_e( 'Password Lost and Found' ) ?>"><?php _e( 'Quên mật khẩu?' ); ?></a>
 </p>
 
 <?php
@@ -857,15 +857,15 @@ default:
 	} else {
 		// Some parts of this script use the main login form to display a message
 		if		( isset($_GET['loggedout']) && true == $_GET['loggedout'] )
-			$errors->add('loggedout', __('You are now logged out.'), 'message');
+			$errors->add('loggedout', __('Bạn đã đăng xuất.'), 'message');
 		elseif	( isset($_GET['registration']) && 'disabled' == $_GET['registration'] )
-			$errors->add('registerdisabled', __('User registration is currently not allowed.'));
+			$errors->add('registerdisabled', __('Tài khoản không đúng.'));
 		elseif	( isset($_GET['checkemail']) && 'confirm' == $_GET['checkemail'] )
-			$errors->add('confirm', __('Check your e-mail for the confirmation link.'), 'message');
+			$errors->add('confirm', __('Kiểm tra Email để xác nhận.'), 'message');
 		elseif	( isset($_GET['checkemail']) && 'newpass' == $_GET['checkemail'] )
-			$errors->add('newpass', __('Check your e-mail for your new password.'), 'message');
+			$errors->add('newpass', __('Mật khẩu mới đã được gữi vào Email của bạn.'), 'message');
 		elseif	( isset($_GET['checkemail']) && 'registered' == $_GET['checkemail'] )
-			$errors->add('registered', __('Registration complete. Please check your e-mail.'), 'message');
+			$errors->add('registered', __('Đăng ký thành công, vui lòng kiểm tra Email.'), 'message');
 		elseif ( strpos( $redirect_to, 'about.php?updated' ) )
 			$errors->add('updated', __( '<strong>You have successfully updated WordPress!</strong> Please log back in to see what&#8217;s new.' ), 'message' );
 	}
@@ -899,11 +899,11 @@ default:
 
 <form name="loginform" id="loginform" action="<?php echo esc_url( site_url( 'wp-login.php', 'login_post' ) ); ?>" method="post">
 	<p>
-		<label for="user_login"><?php _e('Username') ?><br />
+		<label for="user_login"><?php _e('Tên đăng nhập') ?><br />
 		<input type="text" name="log" id="user_login"<?php echo $aria_describedby_error; ?> class="input" value="<?php echo esc_attr( $user_login ); ?>" size="20" /></label>
 	</p>
 	<p>
-		<label for="user_pass"><?php _e('Password') ?><br />
+		<label for="user_pass"><?php _e('Mật khẩu') ?><br />
 		<input type="password" name="pwd" id="user_pass"<?php echo $aria_describedby_error; ?> class="input" value="" size="20" /></label>
 	</p>
 	<?php
@@ -914,9 +914,9 @@ default:
 	 */
 	do_action( 'login_form' );
 	?>
-	<p class="forgetmenot"><label for="rememberme"><input name="rememberme" type="checkbox" id="rememberme" value="forever" <?php checked( $rememberme ); ?> /> <?php esc_attr_e('Remember Me'); ?></label></p>
+	<p class="forgetmenot"><label for="rememberme"><input name="rememberme" type="checkbox" id="rememberme" value="forever" <?php checked( $rememberme ); ?> /> <?php esc_attr_e('Nhớ tài khoản'); ?></label></p>
 	<p class="submit">
-		<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="<?php esc_attr_e('Log In'); ?>" />
+		<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="<?php esc_attr_e('Đăng nhập'); ?>" />
 <?php	if ( $interim_login ) { ?>
 		<input type="hidden" name="interim-login" value="1" />
 <?php	} else { ?>
@@ -933,13 +933,13 @@ default:
 <p id="nav">
 <?php if ( ! isset( $_GET['checkemail'] ) || ! in_array( $_GET['checkemail'], array( 'confirm', 'newpass' ) ) ) :
 	if ( get_option( 'users_can_register' ) ) :
-		$registration_url = sprintf( '<a href="%s">%s</a>', esc_url( wp_registration_url() ), __( 'Register' ) );
+		$registration_url = sprintf( '<a href="%s">%s</a>', esc_url( wp_registration_url() ), __( 'Đăng ký' ) );
 
 		/** This filter is documented in wp-includes/general-template.php */
 		echo apply_filters( 'register', $registration_url ) . ' | ';
 	endif;
 	?>
-	<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>" title="<?php esc_attr_e( 'Password Lost and Found' ); ?>"><?php _e( 'Lost your password?' ); ?></a>
+	<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>" title="<?php esc_attr_e( 'Password Lost and Found' ); ?>"><?php _e( 'Quên mật khẩu?' ); ?></a>
 <?php endif; ?>
 </p>
 <?php } ?>

@@ -305,7 +305,7 @@ do_action( 'personal_options', $profileuser );
 
 <table class="form-table">
 	<tr class="user-user-login-wrap">
-		<th><label for="user_login"><?php _e('Username'); ?></label></th>
+		<th><label for="user_login"><?php _e('Tên đăng nhập'); ?></label></th>
 		<td><input type="text" name="user_login" id="user_login" value="<?php echo esc_attr($profileuser->user_login); ?>" disabled="disabled" class="regular-text" /> <span class="description"><?php _e('Usernames cannot be changed.'); ?></span></td>
 	</tr>
 

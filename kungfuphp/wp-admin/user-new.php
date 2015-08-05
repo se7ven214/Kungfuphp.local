@@ -356,7 +356,7 @@ $new_user_ignore_pass = $creating && isset( $_POST['noconfirmation'] ) ? wp_unsl
 ?>
 <table class="form-table">
 	<tr class="form-field form-required">
-		<th scope="row"><label for="user_login"><?php _e('Username'); ?> <span class="description"><?php _e('(required)'); ?></span></label></th>
+		<th scope="row"><label for="user_login"><?php _e('Tên đăng nhập'); ?> <span class="description"><?php _e('(required)'); ?></span></label></th>
 		<td><input name="user_login" type="text" id="user_login" value="<?php echo esc_attr($new_user_login); ?>" aria-required="true" /></td>
 	</tr>
 	<tr class="form-field form-required">

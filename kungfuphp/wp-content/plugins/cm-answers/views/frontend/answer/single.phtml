@@ -8,7 +8,7 @@ $thread = CMA_AnswerThread::getInstance($post->ID);
         <div class="cma-wrapper">
             <div id="content" role="main" class="entry-content">
                 <header class="entry-header">
-                    <h1 class="entry-title"><?php echo $thread->getTitle(); ?><a class="cma-backlink" href="<?php echo esc_attr(get_post_type_archive_link(CMA_AnswerThread::POST_TYPE)); ?>">&laquo; <?php _e('Back to Questions List', 'cm-answers'); ?></a></h1>
+                    <h1 class="entry-title" style="margin: 0;width: 100%;background: #fff;padding: 15px;border-bottom: 1px solid #F0F0F0;font-weight: bold;"><?php echo $thread->getTitle(); ?><a class="cma-backlink" href="<?php echo esc_attr(get_post_type_archive_link(CMA_AnswerThread::POST_TYPE)); ?>">&laquo; <?php _e('Trở về danh sách câu hỏi', 'cm-answers'); ?></a></h1>
 
                 </header>
                 <?php
@@ -39,11 +39,11 @@ $thread = CMA_AnswerThread::getInstance($post->ID);
                 <?php endif; ?>
                 <table class="cma-answers-list cma-question-table">
                     <tr>
-                        <td class="cma-question-content">
-                            <div class="cma-question-body"><?php echo $thread->getContent(); ?></div>
-                            <div class="cma-question-meta">
-                                <div class="cma-question-author"><?php printf(__('Posted by %s', 'cm-answers'), $thread->getAuthor()->display_name); ?></div>
-                                <div class="cma-question-date"><?php printf(__('Asked on %s', 'cm-answers'), $thread->getCreationDate()); ?></div>
+                        <td class="cma-question-content" style="padding: 10px;background: #fff;border-bottom: none;">
+                            <div class="cma-question-body" style="padding: 20px 0px;"><?php echo $thread->getContent(); ?></div>
+                            <div class="cma-question-meta" style="background: #e0eaf1;padding: 5px;float: right;text-align: right;border-radius: 5px;font-size: 11px;color: #333;">
+                                <div class="cma-question-author"><?php printf(__('Đăng bởi %s', 'cm-answers'), $thread->getAuthor()->display_name); ?></div>
+                                <div class="cma-question-date"><?php printf(__('Đã đăng %s', 'cm-answers'), $thread->getCreationDate()); ?></div>
                             </div>
                         </td>
                     </tr>
@@ -56,30 +56,30 @@ $thread = CMA_AnswerThread::getInstance($post->ID);
                 if(!empty($answers)):
                     ?>
                     <?php if(CMA_AnswerThread::isRatingAllowed()): ?><ul class="cma-thread-orderby cma-answers-orderby">
-                            <li<?php if($currentSort == 'newest'): ?> class="cma-current-sort"<?php endif; ?>><a href="?sort=newest"><?php _e('Newest', 'cm-answers'); ?></a></li>
-                            <li<?php if($currentSort == 'votes'): ?> class="cma-current-sort"<?php endif; ?>><a href="?sort=votes"><?php _e('Highest Rating', 'cm-answers'); ?></a></li>
+                            <li<?php if($currentSort == 'newest'): ?> class="cma-current-sort"<?php endif; ?>><a href="?sort=newest"><?php _e('Mới nhất', 'cm-answers'); ?></a></li>
+                            <li<?php if($currentSort == 'votes'): ?> class="cma-current-sort"<?php endif; ?>><a href="?sort=votes"><?php _e('Đánh giá cao nhất', 'cm-answers'); ?></a></li>
                         </ul><?php endif; ?>
                     <?php
                     foreach($answers as $answer):
                         ?>
                         <table class="cma-answers-list" data-vote-nonce="<?php echo esc_attr(wp_create_nonce('cma_vote')); ?>">
-                            <tr id="answer-<?php echo $answer['id']; ?>">
+                            <tr id="answer-<?php echo $answer['id']; ?>" style="background: #fff;">
                                 <?php if(CMA_AnswerThread::isRatingAllowed()): ?><td class="cma-answer-rating" >
                                         <div class="cma-answer-rating-loading"></div>
-                                        <a href="javascript:void(0)" onclick="thumbsUp(<?php echo $answer['id']; ?>)" class="cma-thumbs-up" title="<?php _e('Thumbs Up!', 'cm-answers'); ?>">▲</a>
+                                        <a href="javascript:void(0)" onclick="thumbsUp(<?php echo $answer['id']; ?>)" class="cma-thumbs-up" title="<?php _e('+1!', 'cm-answers'); ?>">▲</a>
                                         <div class="cma-answer-rating-count"><?php echo $answer['rating']; ?></div>
-                                        <?php if(CMA_AnswerThread::isNegativeRatingAllowed()): ?><a href="javascript:void(0)" onclick="thumbsDown(<?php echo $answer['id']; ?>)" class="cma-thumbs-down" title="<?php _e('Thumbs Down!', 'cm-answers'); ?>">▼</a><?php endif; ?>
+                                        <?php if(CMA_AnswerThread::isNegativeRatingAllowed()): ?><a href="javascript:void(0)" onclick="thumbsDown(<?php echo $answer['id']; ?>)" class="cma-thumbs-down" title="<?php _e('-1!', 'cm-answers'); ?>">▼</a><?php endif; ?>
 
                                     </td>
                                 <?php else: ?>
                                     <td class="cma-answer-norating"></td>
                                 <?php endif; ?>
 
-                                <td class="cma-answer-content<?php if(CMA_AnswerThread::isRatingAllowed()): ?> cma-answer-norating-content<?php endif; ?>">
+                                <td class="cma-answer-content<?php if(CMA_AnswerThread::isRatingAllowed()): ?> cma-answer-norating-content<?php endif; ?>" style="padding: 10px;">
                                     <div class="cma-answer-body"><?php echo $answer['content']; ?></div>
-                                    <div class="cma-answer-meta">
-                                        <div class="cma-answer-author"><?php printf(__('Posted by %s', 'cm-answers'), $answer['author']); ?></div>
-                                        <div class="cma-answer-date"><?php printf(__('Answered On %s', 'cm-answers'), $answer['date']); ?></div>
+                                    <div class="cma-answer-meta" style="background: #e0eaf1;">
+                                        <div class="cma-answer-author"><?php printf(__('Đăng bởi %s', 'cm-answers'), $answer['author']); ?></div>
+                                        <div class="cma-answer-date"><?php printf(__('Đã trả lời %s', 'cm-answers'), $answer['date']); ?></div>
                                     </div>
                                 </td>
                             </tr>
@@ -96,24 +96,24 @@ $thread = CMA_AnswerThread::getInstance($post->ID);
                             <form method="post">
                                 <input type="hidden" name="cma-action" value="add" />
                                 <input type="hidden" name="nonce" value="<?php echo esc_attr(wp_create_nonce('cma_answer')); ?>" />
-                                <h3><?php _e('Post your Answer', 'cm-answers'); ?></h3>
+                                <h3><?php _e('Gửi trả lời', 'cm-answers'); ?></h3>
                                 <div style="clear:both;height:10px;"></div>
                                 <ul class="cma-form-notes">
-                                    <li><?php _e('Allow markup', 'cm-answers'); ?>: &lt;strong&gt;, &lt;em&gt;, &lt;a&gt;</li>
-                                    <li><?php _e('Wrap your code using', 'cm-answers'); ?> &lt;pre&gt;&lt;/pre&gt;</li>
+                                    <li><?php _e('Ký tự cho phép', 'cm-answers'); ?>: &lt;strong&gt;, &lt;em&gt;, &lt;a&gt;</li>
+                                    <li><?php _e('Ký tự chia khoảng', 'cm-answers'); ?> &lt;pre&gt;&lt;/pre&gt;</li>
                                 </ul>
                                 <input type="hidden" name="cma-thread" value="<?php echo $post->ID; ?>"/>
-                                <textarea name="content" placeholder="<?php _e('Write your Answer here', 'cm-answers'); ?>"></textarea><br />
+                                <textarea name="content" rows="10" placeholder="<?php _e('Viết câu trả lời của bạn', 'cm-answers'); ?>"></textarea><br />
                                 <label>
                                     <div style="clear:both;height:5px;"></div>
                                     <input name="thread_notify" type="checkbox" value="1"/>
-                                    <?php _e('Notify me of follow', 'cm-answers'); ?></label><br />
+                                    <?php _e('Theo dõi', 'cm-answers'); ?></label><br />
                                 <?php if(get_current_user_id() == $thread->getAuthorId()): ?><label>
                                         <div style="clear:both;height:5px;"></div>
                                         <input name="thread_resolved" type="checkbox" value="1"/>
-                                        <?php _e('Mark as resolved', 'cm-answers'); ?></label><br /><?php endif; ?>
+                                        <?php _e('Đã giải quyết', 'cm-answers'); ?></label><br /><?php endif; ?>
                                 <div style="clear:both;height:10px;"></div>
-                                <input type="submit" value="<?php _e('Post your Answer', 'cm-answers'); ?>" />
+                                <input type="submit" value="<?php _e('Gửi trả lời', 'cm-answers'); ?>" />
                             </form>
                         <?php endif; ?>
 
