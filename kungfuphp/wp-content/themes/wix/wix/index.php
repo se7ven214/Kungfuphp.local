@@ -22,7 +22,7 @@ if(!empty($_POST['cus_cm'])){
     <!-- <div class="row"> -->
         <div class="yourclass">
               <?php
-                    $popularpost  = new WP_Query( array( 'posts_per_page' => 8, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
+                    $popularpost  = new WP_Query( array( 'posts_per_page' => 10, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
                     while ( $popularpost->have_posts() ) :
                         $popularpost->the_post();
                         $i++;
@@ -165,7 +165,7 @@ if(!empty($_POST['cus_cm'])){
                             </div>
                             <?php endif; ?>
                             <div class="ItemContent Discussion">
-                                <a style="color:#282828" href="<?php echo esc_attr(get_permalink(get_the_ID())); ?>"><?php echo $thread->getTitle(); ?></a>
+                                <a href="<?php echo esc_attr(get_permalink(get_the_ID())); ?>"><?php echo $thread->getTitle(); ?></a>
                             <div class="Meta">
                             <span class="Announcement"><?php echo $thread->getLastPosterName();?></span>
                             <span class="LastCommentDate"><?php printf(__('updated %s by %s', 'cm-answers'),

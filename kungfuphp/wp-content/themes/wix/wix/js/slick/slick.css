@@ -81,7 +81,8 @@
 {
     display: none;
     float: left;
-	margin-right:10px;
+	margin-right:5px;
+	margin-left:5px;
     height: 250px;
     min-height: 1px;
     background:#fff;
