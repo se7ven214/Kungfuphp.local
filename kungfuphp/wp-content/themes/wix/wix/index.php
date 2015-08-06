@@ -189,6 +189,28 @@ if(!empty($_POST['cus_cm'])){
                     color:#fff;">Xem thêm</a></div>
 	             
 	            <div class="detail-inner masonry-container">
+                    <?php
+                        $data_json = '{"info":{ "app_id":"ATD_51", "app_secret":"HdvaBrEUzCcbec3cOaKGFCkeUZT2y2TzUKW8/3xW8kzxnQDLH9+LGtCVA1/DUEy7i/YwXesKFuI/qufqiokazQ==" },
+                                     "location":"27,28", "skills":"13,16,34,21,22,23,31,36,43,11,434,445,229", "limit":"0,1"}';
+                        $url = "http://partner.topdev.vn/api/getJobs";
+                        $ch = curl_init();
+                        curl_setopt($ch, CURLOPT_URL, $url);
+                        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+                        curl_setopt($ch, CURLOPT_POST, 1);
+                        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+                        curl_setopt($ch, CURLOPT_POSTFIELDS,$data_json);
+                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+                        $response  = curl_exec($ch);
+                        $results = json_decode($response);
+                        $results->token;
+                        //echo "<pre>";print_r($results);
+
+                        curl_close($ch);
+                        //exit();
+                        
+                    ?>
+
 		            <h1>
 		                    Tuyển dụng	                 
 		            </h1>
