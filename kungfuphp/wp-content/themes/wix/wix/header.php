@@ -31,7 +31,18 @@
 
 <body <?php body_class(); ?>>
 <!-- Header Start  -->
+<script type='text/javascript'>
+    var ATDOptions = {};
+    ATDOptions.opt = {client_id:'d9b7293cc3f9695fffd8acf01666b25d',widget_width:500,widget_height:450};
+    (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = '//topdev.vn/affiliate/getIframe/client_id/d9b7293cc3f9695fffd8acf01666b25d';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+</script>
+
 <header>
+    
 	<article class="main-nav">
         <?php
 			$wix_args = array(
