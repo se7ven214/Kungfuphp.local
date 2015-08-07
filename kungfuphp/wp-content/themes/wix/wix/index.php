@@ -243,23 +243,33 @@ if(!empty($_POST['cus_cm'])){
  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
    <div class="modal-dialog" role="document" style="position: absolute;top: 36%;left: 27%;">
   <div class="modal-content">
-    <div class="modal-header">
+    <div class="modal-header" style="background:#BB2828;color:#fff">
    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-   <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+   <h4 class="modal-title" id="myModalLabel">Bình chọn</h4>
     </div>
     <div class="modal-body">
-   <label>Ban thay giao dien moi cua kungfuphp co dep hem?</label>
+   <label>Bạn thấy giao diện mới của KungfuPHP như thế nào?</label>
     </div>
     <div class="modal-footer">
    <form method="post" action="<?php get_home_url(); ?>">
-   <table>
+   <table class="layout-vote">
    <tr>
-    <td><input type="radio" name="cus_cm" value="1">like a shit</td>
-    <td><input type="radio" name="cus_cm" value="2">Good<br></td>
-    <td><input type="radio" name="cus_cm" value="3">Need to improve</td>
+   <td>
+   		<input type="radio" class="radio_item" value="1" name="cus_cm" id="radio1" hidden>
+		<label class="label_item" for="radio1"> <img class="vote1" src="<?php echo get_template_directory_uri(); ?>/images/vote1.png"/> </label>
+   </td>
+   <td>
+   		<input type="radio" class="radio_item" value="2" name="cus_cm" id="radio2" hidden>
+		<label class="label_item" for="radio2"> <img class="vote2" src="<?php echo get_template_directory_uri(); ?>/images/vote2.png"/> </label>
+   </td>
+   <td>
+   		<input type="radio" class="radio_item" value="3" name="cus_cm" id="radio3" hidden>
+		<label class="label_item" for="radio3"> <img class="vote3" src="<?php echo get_template_directory_uri(); ?>/images/vote3.png"/> </label>
+   </td>
    </tr> 
    </table>
-   <button type="submit" class="btn btn-primary">Send</button>
+   <span style="float:left">* Click vào hình để chọn.</span>
+   <!--button type="submit" class="btn btn-primary">Gửi</button-->
    </form>
     </div>
   </div>
@@ -279,4 +289,17 @@ if(!empty($_POST['cus_cm'])){
             <?php $_SESSION['c_rcm'] = 'closed'; ?>
         });
     });
+    
+    $(".vote1").click(function() {
+    	layout_vote = 'Tuyệt vời!' 
+        alert(layout_vote);
+    	});
+    $(".vote2").click(function() {
+    	layout_vote = 'Tạm ổn' 
+        alert(layout_vote);
+ 	   });
+    $(".vote3").click(function() {
+    	layout_vote = 'Xấu tệ' 
+        alert(layout_vote);
+ 	   });
 </script>

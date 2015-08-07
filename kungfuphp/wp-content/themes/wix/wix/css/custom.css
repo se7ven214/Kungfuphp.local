@@ -823,3 +823,16 @@ input[type="search"] {
 .ItemContent a{
 	color:#000;
 }
+.layout-vote{
+	width:90%;
+	height:160px;
+}
+.layout-vote tr td{
+	width:100px;
+}
+.layout-vote img{
+	width:100px;
+}
+.layout-vote img:hover{
+	width:120px;
+}
