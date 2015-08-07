@@ -139,7 +139,7 @@ if(!empty($_POST['cus_cm'])){
                             $thread = CMA_AnswerThread::getInstance(get_the_ID());
                             ?>
 
-                            <div class="col-md-12 topic">
+                            <div class="col-md-9 topic box">
                             <div class="article">
                             <div style="margin-left:10px;width:100%;float:left;margin-bottom:10px">
                             <div class="StatBox ViewsBox AnswersBox" style="background: #73a550;color: #FFF;">
@@ -188,7 +188,7 @@ if(!empty($_POST['cus_cm'])){
                     text-align: center;
                     color:#fff;">Xem thêm</a></div>
 	             
-	            <div class="detail-inner masonry-container">
+	          
                     <?php
                         $data_json = '{"info":{ "app_id":"ATD_51", "app_secret":"HdvaBrEUzCcbec3cOaKGFCkeUZT2y2TzUKW8/3xW8kzxnQDLH9+LGtCVA1/DUEy7i/YwXesKFuI/qufqiokazQ==" },
                                      "location":"27,28", "skills":"13,16,34,21,22,23,31,36,43,11,434,445,229", "limit":"0,1"}';
@@ -214,6 +214,7 @@ if(!empty($_POST['cus_cm'])){
 		            <h1>
 		                    Tuyển dụng	                 
 		            </h1>
+		              <div class="detail-inner masonry-container">
 		            <?php 
 		            $args = array( 'posts_per_page' => 6, 'offset'=> 1, 'category' => 57 );
 					$posts_array = get_posts( $args ); ?>
@@ -222,7 +223,7 @@ if(!empty($_POST['cus_cm'])){
 					$wix_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>
 					
 					
-						<li class="col-md-4">
+						<li class="col-md-4 box">
 							<div class="recruitment">
 								<img src="<?php echo $wix_feat_image; ?>" style="height: 30px"/><br>
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
