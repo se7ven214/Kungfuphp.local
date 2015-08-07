@@ -836,3 +836,6 @@ input[type="search"] {
 .layout-vote img:hover{
 	width:120px;
 }
+.btn-new-topic img:hover{
+	opacity:0.8;
+}
