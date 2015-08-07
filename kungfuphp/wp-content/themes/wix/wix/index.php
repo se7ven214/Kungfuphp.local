@@ -185,7 +185,7 @@ if(!empty($_POST['cus_cm'])){
                     height: 38px;
                     line-height: 1;
                     padding: 5px 5px;
-                    text-align: center;
+                    text-align: center;             
                     color:#fff;">Xem thêm</a></div>
 	             
 	          
@@ -211,7 +211,7 @@ if(!empty($_POST['cus_cm'])){
                         
                     ?>
 
-		            <h1>
+		            <h1 style="margin-top:50px">
 		                    Tuyển dụng	                 
 		            </h1>
 		              <div class="detail-inner masonry-container">
