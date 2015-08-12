@@ -37,3 +37,12 @@ get_header();
 <?php
 get_footer();
 ?>
+<script type="text/javascript">
+    var ATDOptions = {};
+    ATDOptions.opt = {widget_parent:'topdev-d9b7293cc3f9695fffd8acf01666b25d', client_id:'d9b7293cc3f9695fffd8acf01666b25d',widget_width:1300,widget_height:1300};
+    (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = '//topdev.vn/affiliate/getIframe/type/2/client_id/d9b7293cc3f9695fffd8acf01666b25d';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+</script>
