@@ -191,7 +191,7 @@ if(!empty($_POST['cus_cm'])){
 	          
                     <?php
                         $data_json = '{"info":{ "app_id":"ATD_51", "app_secret":"HdvaBrEUzCcbec3cOaKGFCkeUZT2y2TzUKW8/3xW8kzxnQDLH9+LGtCVA1/DUEy7i/YwXesKFuI/qufqiokazQ==" },
-                                     "location":"27,28", "skills":"13,16,34,21,22,23,31,36,43,11,434,445,229", "limit":"0,1"}';
+                                     "location":"27,28", "skills":"13,16,34,21,22,23,31,36,43,11,434,445,229", "limit":"0,6"}';
                         $url = "http://partner.topdev.vn/api/getJobs";
                         $ch = curl_init();
                         curl_setopt($ch, CURLOPT_URL, $url);
@@ -203,8 +203,8 @@ if(!empty($_POST['cus_cm'])){
 
                         $response  = curl_exec($ch);
                         $results = json_decode($response);
-                        $results->token;
-                        //echo "<pre>";print_r($results);
+                        // $results->token;
+                        // echo "<pre>";print_r($results->data);
 
                         curl_close($ch);
                         //exit();
@@ -219,14 +219,15 @@ if(!empty($_POST['cus_cm'])){
 		            $args = array( 'posts_per_page' => 6, 'offset'=> 1, 'category' => 57 );
 					$posts_array = get_posts( $args ); ?>
 					<ul>
-					<?php foreach ( $posts_array as $post ) : setup_postdata( $post );
-					$wix_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>
+					<?php foreach ( $results->data as $post ) : 
+					// $wix_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); 
+                    ?>
 					
 					
 						<li class="col-md-4 box">
 							<div class="recruitment">
-								<img src="<?php echo $wix_feat_image; ?>" style="height: 30px"/><br>
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								<img src="http://kungfuphp.com/wp-content/uploads/2015/07/cau-hoi-phong-van-php.png" style="height: 30px"/><br>
+								<a href="https://topdev.vn/partners/detail-jobs/<?php echo $post->alias; ?>/?token=<?php echo  $results->token; ?>"><?php echo $post->title; ?></a>
 							</div>
 						</li>
 						
@@ -303,4 +304,5 @@ if(!empty($_POST['cus_cm'])){
     	layout_vote = 'Xấu tệ' 
         alert(layout_vote);
  	   });
+
 </script>
