@@ -310,11 +310,11 @@ if(!empty($_POST['cus_cm'])){
     var $email_frm = 1;
     var $ur_sh = '<?php echo $_SESSION['c_rcm']; ?>';
     $( document ).ready(function() {
-        $('#myModal').modal('show');
-        //setInterval(function(){if($email_frm == 1 && $ur_sh != 'closed' ){$('#myModal').modal('show'); $email_frm = 0;}}, 3000);
-        //$('.close').click(function(){
-            //<?php $_SESSION['c_rcm'] = 'closed'; ?>
-        //});
+        //$('#myModal').modal('show');
+        setInterval(function(){if($email_frm == 1 && $ur_sh != 'closed' ){$('#myModal').modal('show'); $email_frm = 0;}}, 5000);
+        $('.close').click(function(){
+            <?php $_SESSION['c_rcm'] = 'closed'; ?>
+        });
     });
     var tuyetvoi = "tuyetvoi";
     var tamon = "tuyetvoi";
