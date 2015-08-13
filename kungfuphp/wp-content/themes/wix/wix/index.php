@@ -204,7 +204,7 @@ if(!empty($_POST['cus_cm'])){
                         $response  = curl_exec($ch);
                         $results = json_decode($response);
                         // $results->token;
-                        // echo "<pre>";print_r($results->data);
+                        //echo "<pre>";print_r($results->data);
 
                         curl_close($ch);
                         //exit();
@@ -223,12 +223,36 @@ if(!empty($_POST['cus_cm'])){
 					// $wix_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); 
                     ?>
 					
-					
+					<?php
+                        $min_salary = $post->salary_min;
+                        $max_salary = $post->salary_max;
+                        $salary = ($min_salary==0 && $max_salary==0) ? "TThuận":$min_salary.'-'.$max_salary;
+                    ?>
 						<li class="col-md-4 box">
-							<div class="recruitment">
-								<img src="http://kungfuphp.com/wp-content/uploads/2015/07/cau-hoi-phong-van-php.png" style="height: 30px"/><br>
-								<a href="https://topdev.vn/partners/detail-jobs/<?php echo $post->alias; ?>/?token=<?php echo  $results->token; ?>"><?php echo $post->title; ?></a>
-							</div>
+							<div class="row recruitment">
+								<p>
+                                    <a href="https://topdev.vn/partners/detail-jobs/<?php echo $post->alias; ?>/?token=<?php echo  $results->token; ?>"><?php echo $post->title; ?></a>
+                                </p>
+                                <p>
+                                <p class="col-md-12 no-padding-left">
+                                    <span class="span-cell tooltips" style="width:28%" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Lương">
+                                        <img src="http://kungfuphp.local/wp-content/uploads/2015/01/clock.png" />: <?php echo $salary; ?>
+                                    </span>
+                                    <span class="span-cell tooltips" style="width:23%" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Year">
+                                        <img src="http://kungfuphp.local/wp-content/uploads/2015/01/clock.png" />: >1 năm
+                                    </span>
+                                    <span class="span-cell tooltips" style="width:14%" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="So luong">
+                                        <img src="http://kungfuphp.local/wp-content/uploads/2015/01/rankings.png" />: <?php echo $post->qty; ?>
+                                    </span>
+                                    <span class="span-cell tooltips" style="width:30%" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Noi lam viec">
+                                        <img src="http://kungfuphp.local/wp-content/uploads/2015/01/location.png" />: Hồ Chí Minh
+                                    </span>
+                                </p>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 no-padding" style="text-align: right;">
+                                    <a style="top:10px;left:-25px" class="btn btn-orange btn-apply-job" href="https://topdev.vn/partners/detail-jobs/<?php echo $post->alias; ?>/?token=<?php echo  $results->token; ?>" target="_blank">Apply</a>
+                                </div>
+                               
+                            </div>
 						</li>
 						
 					<?php endforeach; 
@@ -258,15 +282,15 @@ if(!empty($_POST['cus_cm'])){
    <tr>
    <td>
    		<input type="radio" class="radio_item" value="1" name="cus_cm" id="radio1" hidden>
-		<label class="label_item" for="radio1"> <img class="vote1" src="<?php echo get_template_directory_uri(); ?>/images/vote1.png"/> </label>
+		<label class="label_item" for="radio1"> <img class="vote1" id="tuyetvoi" src="<?php echo get_template_directory_uri(); ?>/images/vote1.png"/> </label>
    </td>
    <td>
    		<input type="radio" class="radio_item" value="2" name="cus_cm" id="radio2" hidden>
-		<label class="label_item" for="radio2"> <img class="vote2" src="<?php echo get_template_directory_uri(); ?>/images/vote2.png"/> </label>
+		<label class="label_item" for="radio2"> <img class="vote2" id="tamon" src="<?php echo get_template_directory_uri(); ?>/images/vote2.png"/> </label>
    </td>
    <td>
    		<input type="radio" class="radio_item" value="3" name="cus_cm" id="radio3" hidden>
-		<label class="label_item" for="radio3"> <img class="vote3" src="<?php echo get_template_directory_uri(); ?>/images/vote3.png"/> </label>
+		<label class="label_item" for="radio3"> <img class="vote3" id="xaute" src="<?php echo get_template_directory_uri(); ?>/images/vote3.png"/> </label>
    </td>
    </tr> 
    </table>
@@ -286,23 +310,47 @@ if(!empty($_POST['cus_cm'])){
     var $email_frm = 1;
     var $ur_sh = '<?php echo $_SESSION['c_rcm']; ?>';
     $( document ).ready(function() {
-        setInterval(function(){if($email_frm == 1 && $ur_sh != 'closed' ){$('#myModal').modal('show'); $email_frm = 0;}}, 3000);
-        $('.close').click(function(){
-            <?php $_SESSION['c_rcm'] = 'closed'; ?>
-        });
+        $('#myModal').modal('show');
+        //setInterval(function(){if($email_frm == 1 && $ur_sh != 'closed' ){$('#myModal').modal('show'); $email_frm = 0;}}, 3000);
+        //$('.close').click(function(){
+            //<?php $_SESSION['c_rcm'] = 'closed'; ?>
+        //});
     });
-    
-    $(".vote1").click(function() {
-    	layout_vote = 'Tuyệt vời!' 
-        alert(layout_vote);
+    var tuyetvoi = "tuyetvoi";
+    var tamon = "tuyetvoi";
+    var xaute = "tuyetvoi";
+    $("#tuyetvoi").bind( "click", function() {
+        <?php
+            $myfile = "vote.txt";
+            //$current = file_get_contents($myfile);
+            $current1 = ",Tuyetvoi";
+            file_put_contents($myfile, $current1,FILE_APPEND | LOCK_EX);
+        ?>
+        alert("a");
+    	$('#myModal').modal('hide');
+        return false;
     	});
-    $(".vote2").click(function() {
-    	layout_vote = 'Tạm ổn' 
-        alert(layout_vote);
+    $("#tamon").bind( "click", function() {
+    	 <?php
+            $myfile = "vote.txt";
+            //$current = file_get_contents($myfile);
+            $current2 = ",Tamon";
+            file_put_contents($myfile, $current2,FILE_APPEND | LOCK_EX);
+        ?>
+        alert("b");
+        $('#myModal').modal('hide');
+        return false;
  	   });
-    $(".vote3").click(function() {
-    	layout_vote = 'Xấu tệ' 
-        alert(layout_vote);
+    $("#xaute").bind( "click", function() {
+    	 <?php
+            $myfile = "vote.txt";
+            //$current = file_get_contents($myfile);
+            $current3 = ",Xaute";
+            file_put_contents($myfile, $current3,FILE_APPEND | LOCK_EX);
+        ?>
+        alert("c");
+        $('#myModal').modal('hide');
+        return ;
  	   });
 
 </script>

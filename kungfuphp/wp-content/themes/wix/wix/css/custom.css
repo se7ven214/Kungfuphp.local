@@ -772,7 +772,7 @@ input[type="search"] {
 }
 
 .no-padding-left{
-	
+	padding-left: 0 !important;
 }
 
 .masonry-brick{
@@ -791,10 +791,12 @@ input[type="search"] {
  	width:100%;
  	box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
 }
+
 .adsbygoogle-sidebar{
  	display:inline-block;
  	width:270px;
  	height:270px;
+
  }
  .chpcs_image_carousel{
  	/*height:200px;*/
@@ -805,24 +807,30 @@ input[type="search"] {
 	border-top: 3px solid #BB2828;
 }
 #wa_chpc_slider_prev span:hover{color:#CCC9C9;}
+
 .menu-right-border{
 	width:100%;
 	border-bottom:1px solid #CCC9C9;
 	margin-bottom:10px;
 }
+
 .recruitment{
 	position: relative;
-	padding: 50px;
+	padding: 25px 20px;
 	margin: 0 auto 20px;
 	background-color: #fff;
 	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5), inset 0 0 50px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5), inset 0 0 50px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), inset 0 0 50px rgba(0, 0, 0, 0.1);
 	font-weight:600;
+	background: url(http://kungfuphp.local/wp-content/uploads/2015/01/logo-kungfuphp.png) no-repeat right bottom;
+	background-size: 15%;
 }
+
 .ItemContent a{
 	color:#000;
 }
+
 .layout-vote{
 	width:90%;
 	height:160px;
@@ -838,4 +846,120 @@ input[type="search"] {
 }
 .btn-new-topic img:hover{
 	opacity:0.8;
+}
+
+
+#fb-root {
+  display: none;
+}
+
+/* To fill the container and nothing else */
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+  width: 250px !important;
+}
+#footer_copyright {
+    background: #38383A none repeat scroll 0 0;
+    color: #fff;
+    font-size: 13px;
+    line-height: 30px;
+    padding: 20px 0;
+}
+.container, .dnd_container {
+    margin: 0 auto;
+    width: 1170px;
+}
+.row::before, .row::after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.row::after {
+    clear: both;
+}
+.row::before, .row::after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.row {
+    width: 100%;
+}
+.row > [class*="span"]:first-child {
+    margin-left: 0;
+}
+.row .span7 {
+    width: 57.265%;
+}
+.row > [class*="span"] {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    margin-left: 2.5641%;
+    min-height: 20px;
+    width: 100%;
+}
+.row .span5 {
+    width: 40.1709%;
+}
+.footer_social {
+    text-align: right;
+}
+#footer_copyright a {
+    color: #056ab2 !important;
+}
+#dz_main_footer a {
+    color: #fff;
+}
+.footer_social a {
+    background: #242e35 none repeat scroll 0 0;
+    border-radius: 50%;
+    color: #056ab2 !important;
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    width: 32px;
+}
+.row > [class*="span"]:first-child {
+    margin-left: 0;
+}
+.row .span7 {
+    width: 57.265%;
+}
+.recruitment span {
+	font-family: 'Glyphicons Halflings';
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-size:12px;
+    color: #888;
+    padding: 0;
+}
+.recruitment p {
+	padding-right: 0;
+}
+.recruitment span .col-md-4{
+	width: 30%;
+}
+.btn-orange:hover {
+    background: #d8891a;
+    color: #fff;
+}
+
+.btn-apply-job {
+    border-radius: 0px;
+   	margin-left: 2px;
+    margin-top: 5px;
+    font-size: 13px;
+    position: relative;
+    top: -5px;
+}
+.btn-orange {
+    color: #FFF;
+    background: #EC9721 none repeat scroll 0px 0px;
+}
+.btn:hover, .btn:focus {
+    color: #333;
+    text-decoration: none;
 }

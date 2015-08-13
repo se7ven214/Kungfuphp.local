@@ -89,9 +89,10 @@ $thread = CMA_AnswerThread::getInstance($post->ID);
                     ?>
                 </table>
                 <div class="cma-form-container">
-                    <?php if(is_user_logged_in()): ?>
+                    <?php //if(is_user_logged_in()): ?>
 
                         <?php if(!$thread->isResolved()) : ?>
+
                             <div style="clear:both;height:25px;"></div>
                             <form method="post">
                                 <input type="hidden" name="cma-action" value="add" />
@@ -108,7 +109,7 @@ $thread = CMA_AnswerThread::getInstance($post->ID);
                                     <div style="clear:both;height:5px;"></div>
                                     <input name="thread_notify" type="checkbox" value="1"/>
                                     <?php _e('Theo dõi', 'cm-answers'); ?></label><br />
-                                <?php if(get_current_user_id() == $thread->getAuthorId()): ?><label>
+                                <?php if(2 == 2): ?><label>
                                         <div style="clear:both;height:5px;"></div>
                                         <input name="thread_resolved" type="checkbox" value="1"/>
                                         <?php _e('Đã giải quyết', 'cm-answers'); ?></label><br /><?php endif; ?>
@@ -117,11 +118,11 @@ $thread = CMA_AnswerThread::getInstance($post->ID);
                             </form>
                         <?php endif; ?>
 
-                    <?php else: ?>
+                    <?php //else: ?>
                         <?php
-                        do_action('CMA_login_form');
+                        //do_action('CMA_login_form');
                         ?>
-                    <?php endif; ?>
+                    <?php //endif; ?>
                 </div>
             </div>
         </div>
