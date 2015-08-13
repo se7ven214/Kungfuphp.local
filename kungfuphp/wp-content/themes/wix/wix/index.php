@@ -326,7 +326,7 @@ if(!empty($_POST['cus_cm'])){
             $current1 = ",Tuyetvoi";
             file_put_contents($myfile, $current1,FILE_APPEND | LOCK_EX);
         ?>
-        alert("a");
+       
     	$('#myModal').modal('hide');
         return false;
     	});
@@ -337,7 +337,7 @@ if(!empty($_POST['cus_cm'])){
             $current2 = ",Tamon";
             file_put_contents($myfile, $current2,FILE_APPEND | LOCK_EX);
         ?>
-        alert("b");
+       
         $('#myModal').modal('hide');
         return false;
  	   });
@@ -348,7 +348,7 @@ if(!empty($_POST['cus_cm'])){
             $current3 = ",Xaute";
             file_put_contents($myfile, $current3,FILE_APPEND | LOCK_EX);
         ?>
-        alert("c");
+        
         $('#myModal').modal('hide');
         return ;
  	   });
