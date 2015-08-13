@@ -866,7 +866,7 @@ input[type="search"] {
 }
 .container, .dnd_container {
     margin: 0 auto;
-    width: 1170px;
+    width: 1300px;
 }
 .row::before, .row::after {
     content: "";
